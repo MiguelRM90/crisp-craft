@@ -80,3 +80,4 @@ crisp-craft/
     ├── seed-recipes.data.ts         # Canonical recipe dataset & regional synonym dictionary
     └── build-shards.ts              # Deterministic shard partitioner script
 ```
+

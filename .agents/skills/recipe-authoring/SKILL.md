@@ -64,3 +64,4 @@ Choose the most accurate thermodynamic class for `afProfile.foodPhysicsClass`:
    pnpm test
    pnpm run build
    ```
+
