@@ -1,26 +1,28 @@
 {
   "version": "1.0.0",
-  "generatedAtIso": "2026-10-19T14:59:23.239Z",
+  "generatedAtIso": "2026-10-19T16:23:45.726Z",
   "totalRecipes": 12,
   "shardCount": 2,
   "canonicalIngredients": {
     "pollo_pechuga": "Pechuga de pollo",
     "pollo_alitas": "Alitas de pollo",
     "pollo_muslos": "Contramuslos de pollo",
+    "cerdo_solomillo": "Solomillo de cerdo",
+    "jamon_iberico": "Jamón ibérico",
     "salmon_lomo": "Lomo de salmón",
     "merluza_lomo": "Lomo de merluza",
-    "patata": "Patata / Papa",
-    "boniato": "Boniato / Camote",
-    "calabacin": "Calabacín / Zucchini",
+    "langostinos": "Langostinos",
+    "patata": "Patata",
+    "boniato": "Boniato",
+    "calabacin": "Calabacín",
     "berenjena": "Berenjena",
-    "pimiento_rojo": "Pimiento morrón rojo",
-    "brocoli": "Brócoli fresco",
+    "pimiento_rojo": "Pimiento rojo",
+    "brocoli": "Brócoli",
     "coliflor": "Coliflor",
     "garbanzos_cocidos": "Garbanzos cocidos",
     "tofu_firme": "Tofu firme",
-    "platano_macho": "Plátano macho / Verde",
-    "yuca": "Yuca / Mandioca",
     "huevo": "Huevo campero",
+    "leche_entera": "Leche entera",
     "queso_parmesano": "Queso parmesano",
     "queso_mozzarella": "Queso mozzarella",
     "queso_crema": "Queso crema",
@@ -29,64 +31,47 @@
     "harina_almendra": "Harina de almendra",
     "harina_trigo": "Harina de trigo",
     "avena_copos": "Copos de avena",
-    "manzana": "Manzana reineta / Fuji",
+    "manzana": "Manzana reineta",
     "chocolate_negro": "Chocolate negro 70%",
     "aceite_oliva": "Aceite de oliva virgen extra",
     "pimenton_dulce": "Pimentón dulce de la Vera",
     "ajo_polvo": "Ajo en polvo",
     "cebolla": "Cebolla",
     "limon": "Limón",
-    "miel": "Miel cruda",
+    "miel": "Miel",
     "salsa_soja": "Salsa de soja",
-    "aguacate": "Aguacate / Palta",
-    "cerdo_solomillo": "Solomillo de cerdo",
-    "langostinos": "Langostinos / Camarones"
+    "aguacate": "Aguacate"
   },
   "ingredientSynonyms": {
     "patata": [
       "patata",
       "patatas",
-      "papa",
-      "papas"
+      "gajos de patata"
     ],
     "boniato": [
       "boniato",
-      "batata",
-      "camote"
+      "batata"
     ],
     "calabacin": [
       "calabacin",
       "calabacín",
-      "zucchini",
-      "zapallito"
-    ],
-    "platano_macho": [
-      "platano macho",
-      "plátano macho",
-      "platano verde",
-      "patacon",
-      "tostones"
-    ],
-    "yuca": [
-      "yuca",
-      "mandioca",
-      "casabe"
+      "calabacines"
     ],
     "aguacate": [
       "aguacate",
-      "palta"
+      "aguacates"
     ],
     "langostinos": [
       "langostinos",
+      "langostino",
       "gambas",
-      "camarones"
+      "gambones"
     ],
     "pimiento_rojo": [
       "pimiento",
-      "pimenton",
-      "morron",
-      "locote",
-      "aji dulce"
+      "pimientos",
+      "pimiento rojo",
+      "pimiento morron"
     ],
     "garbanzos_cocidos": [
       "garbanzos",
@@ -95,7 +80,8 @@
     "pollo_pechuga": [
       "pechuga de pollo",
       "pollo",
-      "filete de pollo"
+      "filetes de pollo",
+      "pechugas"
     ],
     "pollo_alitas": [
       "alitas",
@@ -103,8 +89,14 @@
     ],
     "pollo_muslos": [
       "muslos de pollo",
-      "contramuslos",
-      "trutro"
+      "contramuslos"
+    ],
+    "jamon_iberico": [
+      "jamon",
+      "jamón",
+      "jamon iberico",
+      "jamon serrano",
+      "croquetas"
     ]
   },
   "items": [
@@ -143,7 +135,7 @@
       "id": "es_af_00002",
       "shardId": "shard-01",
       "slug": "patatas-gajo-especiadas-extra-crujientes",
-      "title": "Patatas Gajo Especiadas Extra Crujientes (Deluxe)",
+      "title": "Patatas Gajo Especiadas Extra Crujientes (Estilo Deluxe)",
       "originRegion": "ES",
       "baseTempC": 200,
       "foodPhysicsClass": "root_vegetables_bastons",
@@ -169,7 +161,7 @@
           "pimenton_dulce",
           "ajo_polvo"
         ],
-        "ingCount": 5,
+        "ingCount": 4,
         "stepCount": 3
       }
     },
@@ -202,7 +194,7 @@
           "miel",
           "limon"
         ],
-        "ingCount": 5,
+        "ingCount": 4,
         "stepCount": 3
       }
     },
@@ -237,7 +229,7 @@
           "ajo_polvo",
           "aceite_oliva"
         ],
-        "ingCount": 5,
+        "ingCount": 4,
         "stepCount": 3
       }
     },
@@ -245,7 +237,7 @@
       "id": "es_af_00005",
       "shardId": "shard-01",
       "slug": "tarta-queso-vasca-cremosa-freidora-aire",
-      "title": "Tarta de Queso Vasca Cremosa (La Viña) en Molde",
+      "title": "Tarta de Queso Vasca Cremosa (Estilo La Viña) en Molde",
       "originRegion": "ES",
       "baseTempC": 175,
       "foodPhysicsClass": "bakery_pastry_dough",
@@ -265,43 +257,39 @@
         "mainIngIds": [
           "queso_crema",
           "huevo",
-          "harina_almendra"
+          "harina_almendra",
+          "miel"
         ],
-        "ingCount": 5,
+        "ingCount": 4,
         "stepCount": 3
       }
     },
     {
       "id": "es_af_00006",
       "shardId": "shard-01",
-      "slug": "patacones-tostones-platano-macho-crujientes",
-      "title": "Patacones / Tostones de Plátano Macho en Doble Cocción",
-      "originRegion": "EC",
-      "baseTempC": 190,
-      "foodPhysicsClass": "root_vegetables_bastons",
-      "kcalPerServing": 230,
-      "nutriscoreEst": "A",
+      "slug": "croquetas-jamon-iberico-freidora-aire",
+      "title": "Croquetas Caseras de Jamón Ibérico Doradas sin Freír",
+      "originRegion": "ES",
+      "baseTempC": 200,
+      "foodPhysicsClass": "battered_or_breaded",
+      "kcalPerServing": 265,
+      "nutriscoreEst": "B",
       "searchIndex": {
-        "prepMin": 10,
-        "cookMin": 16,
-        "totalMin": 26,
+        "prepMin": 5,
+        "cookMin": 12,
+        "totalMin": 17,
         "difficulty": 1,
         "servings": 3,
         "mealCategory": "aperitivo",
-        "dietTags": [
-          "vegano",
-          "vegetariano",
-          "sin_gluten",
-          "sin_lactosa",
-          "sin_huevo"
-        ],
+        "dietTags": [],
         "mainIngIds": [
-          "platano_macho",
-          "aceite_oliva",
-          "ajo_polvo",
-          "aguacate"
+          "jamon_iberico",
+          "leche_entera",
+          "pan_rallado",
+          "huevo",
+          "aceite_oliva"
         ],
-        "ingCount": 4,
+        "ingCount": 5,
         "stepCount": 3
       }
     },
@@ -309,7 +297,7 @@
       "id": "es_af_00007",
       "shardId": "shard-02",
       "slug": "garbanzos-especiados-snack-crujiente",
-      "title": "Snack de Garbanzos Tostados al Pimentón y Limón",
+      "title": "Snack de Garbanzos Tostados al Pimentón de la Vera y Limón",
       "originRegion": "ES",
       "baseTempC": 195,
       "foodPhysicsClass": "tender_vegetables",
@@ -344,8 +332,8 @@
     {
       "id": "es_af_00008",
       "shardId": "shard-02",
-      "slug": "bastones-boniato-camote-crujientes-parmesano",
-      "title": "Bastones de Boniato / Camote Asados al Parmesano",
+      "slug": "bastones-boniato-crujientes-parmesano",
+      "title": "Bastones de Boniato Asados al Parmesano y Orégano",
       "originRegion": "ES",
       "baseTempC": 195,
       "foodPhysicsClass": "root_vegetables_bastons",
@@ -377,7 +365,7 @@
       "id": "es_af_00009",
       "shardId": "shard-02",
       "slug": "chips-calabacin-crujientes-parmesano-panko",
-      "title": "Medallones de Calabacín / Zucchini Crujientes al Panko",
+      "title": "Medallones de Calabacín Crujientes al Panko y Parmesano",
       "originRegion": "ES",
       "baseTempC": 200,
       "foodPhysicsClass": "battered_or_breaded",
@@ -409,7 +397,7 @@
       "id": "es_af_00010",
       "shardId": "shard-02",
       "slug": "langostinos-ajillo-limon-express",
-      "title": "Langostinos / Camarones al Ajillo y Limón Express",
+      "title": "Langostinos al Ajillo y Limón en Freidora de Aire",
       "originRegion": "ES",
       "baseTempC": 195,
       "foodPhysicsClass": "lean_protein",
@@ -478,7 +466,7 @@
       "id": "es_af_00012",
       "shardId": "shard-02",
       "slug": "manzanas-asadas-canela-avena-crujiente",
-      "title": "Manzanas Asadas Rellenas de Crumble de Avena y Miel",
+      "title": "Manzanas Asadas Rellenas de Avena, Almendra y Canela",
       "originRegion": "ES",
       "baseTempC": 175,
       "foodPhysicsClass": "bakery_pastry_dough",

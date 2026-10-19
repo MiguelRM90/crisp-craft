@@ -9,9 +9,9 @@
       "lang": "es-ES",
       "originRegion": "ES",
       "sourceMeta": {
-        "adaptationType": "oven_converted_and_verified",
-        "license": "OpenRAIL",
-        "canonicalRef": "somosnlp/RecetasDeLaAbuela#4120"
+        "adaptationType": "native_air_fryer",
+        "license": "Factual-TRLPI-Art10",
+        "canonicalRef": "crisp-craft/es/carnes/pollo-parmesana-af"
       },
       "searchIndex": {
         "prepMin": 10,
@@ -66,13 +66,13 @@
             "type": "flip_and_spray",
             "pctTrigger": 0.53,
             "defaultMin": 8,
-            "label": "Dar la vuelta a las pechugas y pulverizar ligeramente con aceite."
+            "label": "Dar la vuelta a las pechugas y pulverizar ligeramente con aceite de oliva."
           },
           {
             "type": "add_topping",
             "pctTrigger": 0.73,
             "defaultMin": 11,
-            "label": "Repartir el tomate triturado y el queso parmesano para gratinar sin quemar."
+            "label": "Repartir el tomate natural triturado y el queso parmesano para gratinar sin quemar."
           }
         ]
       },
@@ -117,7 +117,7 @@
             },
             {
               "id": "queso_mozzarella",
-              "name": "Mozzarella rallada seca",
+              "name": "Mozzarella rallada especial fundir",
               "qty": 50,
               "unit": "g"
             }
@@ -127,7 +127,7 @@
       "steps": [
         {
           "step": 1,
-          "text": "Precalentar la freidora de aire a 180 °C durante 5 minutos. Secar las pechugas con papel absorbente, sazonar con ajo en polvo y salpimentar.",
+          "text": "Precalentar la freidora de aire a 180 °C durante 5 minutos. Secar las pechugas con papel de cocina, sazonar con ajo en polvo y salpimentar.",
           "timerSec": 300,
           "isAirFryerActivePhase": false
         },
@@ -150,20 +150,20 @@
         "fatG": 11.2,
         "carbsG": 3.4,
         "nutriscoreEst": "A",
-        "dataSource": "OFF_ODbL_USDA_CC0"
+        "dataSource": "BEDCA_ES"
       },
       "shardId": "shard-01"
     },
     "es_af_00002": {
       "id": "es_af_00002",
       "slug": "patatas-gajo-especiadas-extra-crujientes",
-      "title": "Patatas Gajo Especiadas Extra Crujientes (Deluxe)",
+      "title": "Patatas Gajo Especiadas Extra Crujientes (Estilo Deluxe)",
       "lang": "es-ES",
       "originRegion": "ES",
       "sourceMeta": {
         "adaptationType": "native_air_fryer",
-        "license": "OpenRAIL",
-        "canonicalRef": "somosnlp/RecetasDeLaAbuela#1084"
+        "license": "Factual-TRLPI-Art10",
+        "canonicalRef": "crisp-craft/es/verduras/patatas-deluxe-af"
       },
       "searchIndex": {
         "prepMin": 12,
@@ -185,7 +185,7 @@
           "pimenton_dulce",
           "ajo_polvo"
         ],
-        "ingCount": 5,
+        "ingCount": 4,
         "stepCount": 3
       },
       "afProfile": {
@@ -255,7 +255,7 @@
             },
             {
               "id": "ajo_polvo",
-              "name": "Ajo en polvo",
+              "name": "Ajo y cebolla en polvo",
               "qty": 4,
               "unit": "g"
             }
@@ -271,11 +271,11 @@
         },
         {
           "step": 2,
-          "text": "Mezclar los gajos secos con el aceite de oliva, el pimentón y el ajo en polvo hasta impregnar toda la superficie."
+          "text": "Mezclar los gajos secos con el aceite de oliva virgen extra, el pimentón y el ajo en polvo hasta impregnar toda la superficie."
         },
         {
           "step": 3,
-          "text": "Cocinar en la cesta a 200 °C durante 22 minutos, sacudiendo enérgicamente en el minuto 8 y en el minuto 16 hasta lograr ampollas doradas y centro tierno.",
+          "text": "Cocinar en la cesta a 200 °C durante 22 minutos, sacudiendo enérgicamente en el minuto 8 y en el minuto 16 hasta lograr corteza dorada y centro tierno.",
           "timerSec": 1320,
           "isAirFryerActivePhase": true
         }
@@ -287,7 +287,7 @@
         "carbsG": 37.8,
         "fiberG": 4.2,
         "nutriscoreEst": "A",
-        "dataSource": "OFF_ODbL_USDA_CC0"
+        "dataSource": "BEDCA_ES"
       },
       "shardId": "shard-01"
     },
@@ -300,7 +300,7 @@
       "sourceMeta": {
         "adaptationType": "native_air_fryer",
         "license": "Factual-TRLPI-Art10",
-        "canonicalRef": "factual-matrix/salmon-glazed-af"
+        "canonicalRef": "crisp-craft/es/pescados/salmon-glaseado-af"
       },
       "searchIndex": {
         "prepMin": 8,
@@ -321,7 +321,7 @@
           "miel",
           "limon"
         ],
-        "ingCount": 5,
+        "ingCount": 4,
         "stepCount": 3
       },
       "afProfile": {
@@ -357,7 +357,7 @@
             "type": "add_topping",
             "pctTrigger": 0.67,
             "defaultMin": 6,
-            "label": "Pincelar la superficie del salmón con el glaseado de miel y soja para caramelizar sin quemar los azúcares."
+            "label": "Pincelar la superficie del salmón con el glaseado de miel y soja para caramelizar sin quemar."
           }
         ]
       },
@@ -367,7 +367,7 @@
           "items": [
             {
               "id": "salmon_lomo",
-              "name": "Lomos de salmón fresco con piel (3 cm grosor)",
+              "name": "Lomos de salmón fresco con piel (3 cm de grosor)",
               "qty": 400,
               "unit": "g"
             },
@@ -416,7 +416,7 @@
         "fatG": 23.8,
         "carbsG": 7.5,
         "nutriscoreEst": "A",
-        "dataSource": "OFF_ODbL_USDA_CC0"
+        "dataSource": "BEDCA_ES"
       },
       "shardId": "shard-01"
     },
@@ -427,9 +427,9 @@
       "lang": "es-ES",
       "originRegion": "ES",
       "sourceMeta": {
-        "adaptationType": "deep_fry_converted",
-        "license": "OpenRAIL",
-        "canonicalRef": "somosnlp/RecetasDeLaAbuela#2391"
+        "adaptationType": "native_air_fryer",
+        "license": "Factual-TRLPI-Art10",
+        "canonicalRef": "crisp-craft/es/carnes/alitas-adobo-af"
       },
       "searchIndex": {
         "prepMin": 10,
@@ -452,7 +452,7 @@
           "ajo_polvo",
           "aceite_oliva"
         ],
-        "ingCount": 5,
+        "ingCount": 4,
         "stepCount": 3
       },
       "afProfile": {
@@ -500,23 +500,23 @@
       },
       "ingredientGroups": [
         {
-          "purpose": "Alitas y especias",
+          "purpose": "Alitas y adobo de la Vera",
           "items": [
             {
               "id": "pollo_alitas",
-              "name": "Alitas de pollo partidas (jamoncitos y planos)",
+              "name": "Alitas de pollo partidas",
               "qty": 700,
               "unit": "g"
             },
             {
               "id": "pimenton_dulce",
-              "name": "Pimentón dulce ahumado",
+              "name": "Pimentón dulce de la Vera",
               "qty": 6,
               "unit": "g"
             },
             {
               "id": "ajo_polvo",
-              "name": "Ajo en polvo",
+              "name": "Ajo en polvo y orégano",
               "qty": 5,
               "unit": "g"
             },
@@ -533,7 +533,7 @@
       "steps": [
         {
           "step": 1,
-          "text": "Secar exhaustivamente las alitas con papel absorbente (clave para que la piel quede crujiente) y frotar con el pimentón, ajo en polvo y sal."
+          "text": "Secar exhaustivamente las alitas con papel de cocina (clave para que la piel quede crujiente) y frotar con el pimentón de la Vera, ajo en polvo y sal."
         },
         {
           "step": 2,
@@ -543,7 +543,7 @@
         },
         {
           "step": 3,
-          "text": "Dar la vuelta a las alitas y cocinar 10 minutos más a 200 °C, sacudiendo en el minuto 16 hasta que la piel sufle y dore.",
+          "text": "Dar la vuelta a las alitas y cocinar 10 minutos más a 200 °C, sacudiendo en el minuto 16 hasta que la piel quede bien dorada y crujiente.",
           "timerSec": 600,
           "isAirFryerActivePhase": true
         }
@@ -554,20 +554,20 @@
         "fatG": 26.5,
         "carbsG": 1.2,
         "nutriscoreEst": "B",
-        "dataSource": "OFF_ODbL_USDA_CC0"
+        "dataSource": "BEDCA_ES"
       },
       "shardId": "shard-01"
     },
     "es_af_00005": {
       "id": "es_af_00005",
       "slug": "tarta-queso-vasca-cremosa-freidora-aire",
-      "title": "Tarta de Queso Vasca Cremosa (La Viña) en Molde",
+      "title": "Tarta de Queso Vasca Cremosa (Estilo La Viña) en Molde",
       "lang": "es-ES",
       "originRegion": "ES",
       "sourceMeta": {
-        "adaptationType": "oven_converted_and_verified",
-        "license": "OpenRAIL",
-        "canonicalRef": "somosnlp/RecetasDeLaAbuela#6214"
+        "adaptationType": "native_air_fryer",
+        "license": "Factual-TRLPI-Art10",
+        "canonicalRef": "crisp-craft/es/reposteria/tarta-queso-vasca-af"
       },
       "searchIndex": {
         "prepMin": 10,
@@ -583,9 +583,10 @@
         "mainIngIds": [
           "queso_crema",
           "huevo",
-          "harina_almendra"
+          "harina_almendra",
+          "miel"
         ],
-        "ingCount": 5,
+        "ingCount": 4,
         "stepCount": 3
       },
       "afProfile": {
@@ -642,13 +643,13 @@
             },
             {
               "id": "harina_almendra",
-              "name": "Harina fina de almendra o maicena",
+              "name": "Harina fina de almendra o almidón de maíz",
               "qty": 15,
               "unit": "g"
             },
             {
               "id": "miel",
-              "name": "Azúcar o miel suave",
+              "name": "Azúcar blanquilla o miel suave",
               "qty": 90,
               "unit": "g"
             }
@@ -677,52 +678,47 @@
         "fatG": 22.1,
         "carbsG": 15.6,
         "nutriscoreEst": "C",
-        "dataSource": "OFF_ODbL_USDA_CC0"
+        "dataSource": "BEDCA_ES"
       },
       "shardId": "shard-01"
     },
     "es_af_00006": {
       "id": "es_af_00006",
-      "slug": "patacones-tostones-platano-macho-crujientes",
-      "title": "Patacones / Tostones de Plátano Macho en Doble Cocción",
-      "lang": "es-LATAM",
-      "originRegion": "EC",
+      "slug": "croquetas-jamon-iberico-freidora-aire",
+      "title": "Croquetas Caseras de Jamón Ibérico Doradas sin Freír",
+      "lang": "es-ES",
+      "originRegion": "ES",
       "sourceMeta": {
-        "adaptationType": "deep_fry_converted",
-        "license": "OpenRAIL",
-        "canonicalRef": "pabloce/ecuador-recipes#0042"
+        "adaptationType": "native_air_fryer",
+        "license": "Factual-TRLPI-Art10",
+        "canonicalRef": "crisp-craft/es/aperitivos/croquetas-jamon-af"
       },
       "searchIndex": {
-        "prepMin": 10,
-        "cookMin": 16,
-        "totalMin": 26,
+        "prepMin": 5,
+        "cookMin": 12,
+        "totalMin": 17,
         "difficulty": 1,
         "servings": 3,
         "mealCategory": "aperitivo",
-        "dietTags": [
-          "vegano",
-          "vegetariano",
-          "sin_gluten",
-          "sin_lactosa",
-          "sin_huevo"
-        ],
+        "dietTags": [],
         "mainIngIds": [
-          "platano_macho",
-          "aceite_oliva",
-          "ajo_polvo",
-          "aguacate"
+          "jamon_iberico",
+          "leche_entera",
+          "pan_rallado",
+          "huevo",
+          "aceite_oliva"
         ],
-        "ingCount": 4,
+        "ingCount": 5,
         "stepCount": 3
       },
       "afProfile": {
-        "baseTempC": 190,
-        "baseTempF": 375,
-        "preheatMin": 3,
+        "baseTempC": 200,
+        "baseTempF": 390,
+        "preheatMin": 4,
         "singleLayerRequired": true,
         "oilSprayRequired": true,
-        "foodPhysicsClass": "root_vegetables_bastons",
-        "referenceLoadG": 450,
+        "foodPhysicsClass": "battered_or_breaded",
+        "referenceLoadG": 360,
         "hardwareMultipliers": {
           "compact1000w3l": 1.12,
           "standard1500w5l": 1,
@@ -730,15 +726,15 @@
         },
         "massScalingCurve": [
           {
-            "loadG": 250,
-            "timeFactor": 0.85
+            "loadG": 200,
+            "timeFactor": 0.88
           },
           {
-            "loadG": 450,
+            "loadG": 360,
             "timeFactor": 1
           },
           {
-            "loadG": 750,
+            "loadG": 650,
             "timeFactor": 1.22,
             "batchWarning": true
           }
@@ -746,40 +742,45 @@
         "actionTriggers": [
           {
             "type": "flip_and_spray",
-            "pctTrigger": 0.56,
-            "defaultMin": 9,
-            "label": "Extraer los cilindros tiernos, aplastarlos en caliente para formar el patacón, rociar aceite y reintroducir."
+            "pctTrigger": 0.58,
+            "defaultMin": 7,
+            "label": "Girar suavemente las croquetas y aplicar una nebulización ligera de aceite de oliva para dorar la base."
           }
         ]
       },
       "ingredientGroups": [
         {
-          "purpose": "Patacones",
+          "purpose": "Croquetas reposadas y pulverizado",
           "items": [
             {
-              "id": "platano_macho",
-              "name": "Plátanos machos verdes",
-              "qty": 450,
+              "id": "jamon_iberico",
+              "name": "Croquetas caseras de jamón ibérico (refrigeradas o congeladas)",
+              "qty": 360,
               "unit": "g"
             },
             {
-              "id": "aceite_oliva",
-              "name": "Aceite en spray",
-              "qty": 15,
+              "id": "pan_rallado",
+              "name": "Rebozado en pan rallado ligeramente tostado",
+              "qty": 40,
+              "unit": "g"
+            },
+            {
+              "id": "huevo",
+              "name": "Huevo batido del empanado",
+              "qty": 1,
+              "unit": "ud"
+            },
+            {
+              "id": "leche_entera",
+              "name": "Base de bechamel cremosa de leche entera",
+              "qty": 200,
               "unit": "ml"
             },
             {
-              "id": "ajo_polvo",
-              "name": "Sal de ajo",
-              "qty": 4,
-              "unit": "g"
-            },
-            {
-              "id": "aguacate",
-              "name": "Aguacate / Palta para acompañar",
-              "qty": 150,
-              "unit": "g",
-              "optional": true
+              "id": "aceite_oliva",
+              "name": "Aceite de oliva virgen extra en spray",
+              "qty": 12,
+              "unit": "ml"
             }
           ]
         }
@@ -787,29 +788,28 @@
       "steps": [
         {
           "step": 1,
-          "text": "Pelar los plátanos verdes, cortarlos en rodajas gruesas de 3 cm y pulverizar toda su superficie con aceite."
+          "text": "Dejar reposar las croquetas empanadas 20 minutos en nevera (o usarlas directamente congeladas sumando 2 minutos) para que la bechamel mantenga su forma sin abrirse."
         },
         {
           "step": 2,
-          "text": "Primera cocción (ablandado interior): Cocinar a 180 °C durante 9 minutos hasta que cedan al presionarlos.",
-          "timerSec": 540,
+          "text": "Pulverizar toda la superficie de las croquetas con aceite de oliva en spray y colocarlas separadas en la cesta precalentada a 200 °C durante 7 minutos.",
+          "timerSec": 420,
           "isAirFryerActivePhase": true
         },
         {
           "step": 3,
-          "text": "Aplastar cada rodaja con la base de un vaso, pulverizar aceite con sal de ajo y dorar a 200 °C durante 7 minutos adicionales hasta que crujan.",
-          "timerSec": 420,
+          "text": "Voltear con cuidado, aplicar un segundo toque de spray y cocinar los 5 minutos finales a 200 °C hasta lograr una corteza crujiente y uniforme.",
+          "timerSec": 300,
           "isAirFryerActivePhase": true
         }
       ],
       "nutritionPerServing": {
-        "kcal": 230,
-        "proteinG": 2.1,
-        "fatG": 6.8,
-        "carbsG": 42,
-        "fiberG": 3.5,
-        "nutriscoreEst": "A",
-        "dataSource": "OFF_ODbL_USDA_CC0"
+        "kcal": 265,
+        "proteinG": 12.8,
+        "fatG": 11.4,
+        "carbsG": 27.5,
+        "nutriscoreEst": "B",
+        "dataSource": "BEDCA_ES"
       },
       "shardId": "shard-01"
     }
