@@ -1,0 +1,212 @@
+<div class="detail-page">
+  <div class="detail-nav">
+    <a routerLink="/" class="back-link">
+      ← Volver al catálogo
+    </a>
+
+    @if (recipe()) {
+      <button
+        type="button"
+        class="fav-btn"
+        [class.active]="isFavorite()"
+        (click)="toggleFavorite()">
+        {{ isFavorite() ? '❤️ Guardada en favoritos' : '🤍 Guardar favorita' }}
+      </button>
+    }
+  </div>
+
+  @if (isLoading()) {
+    <div class="pwa-card loading-state">
+      <p>Cargando ficha técnica y perfil termodinámico...</p>
+    </div>
+  } @else if (loadError(); as errorMsg) {
+    <div class="pwa-card error-state">
+      <h2>Receta no disponible</h2>
+      <p>{{ errorMsg }}</p>
+      <button type="button" class="pwa-btn pwa-btn-primary" (click)="goBackToCatalog()">
+        Explorar catálogo
+      </button>
+    </div>
+  } @else if (recipe(); as r) {
+    <header class="recipe-hero pwa-card">
+      <div class="hero-badges">
+        <pwa-badge variant="success">{{ categoryLabels[r.searchIndex.mealCategory] }}</pwa-badge>
+        <pwa-badge variant="neutral">{{ difficultyLabels[r.searchIndex.difficulty] }}</pwa-badge>
+        <pwa-badge variant="info">{{ physicsLabels[r.afProfile.foodPhysicsClass] }}</pwa-badge>
+        @if (compensationResult()?.isOverriddenByPersonalFork) {
+          <pwa-badge variant="warning">🛠️ Personal Fork activo</pwa-badge>
+        }
+      </div>
+
+      <h1 class="recipe-title">{{ r.title }}</h1>
+
+      <div class="hero-kpis">
+        @if (compensationResult(); as comp) {
+          <div class="hero-kpi highlight">
+            <span class="kpi-label">Temperatura Compensada</span>
+            <strong class="kpi-val">
+              {{ comp.effectiveTempC | temperatureUnit:hardwareStore.profile().preferredTempUnit }}
+            </strong>
+          </div>
+          <div class="hero-kpi highlight">
+            <span class="kpi-label">Tiempo Ajustado</span>
+            <strong class="kpi-val">
+              {{ comp.effectiveCookSec | durationFormat:'human' }}
+            </strong>
+          </div>
+        }
+        <div class="hero-kpi">
+          <span class="kpi-label">Preparación previa</span>
+          <strong class="kpi-val">{{ r.searchIndex.prepMin }} min</strong>
+        </div>
+        <div class="hero-kpi">
+          <span class="kpi-label">Calorías / ración</span>
+          <strong class="kpi-val">{{ r.nutritionPerServing.kcal }} kcal</strong>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <div class="servings-control" aria-label="Control de raciones">
+          <span class="servings-label">Raciones:</span>
+          <button
+            type="button"
+            class="step-btn"
+            [disabled]="selectedServings() <= 1"
+            (click)="adjustServings(-1)"
+            aria-label="Reducir raciones">
+            −
+          </button>
+          <strong class="servings-value">{{ selectedServings() }}</strong>
+          <button
+            type="button"
+            class="step-btn"
+            [disabled]="selectedServings() >= 12"
+            (click)="adjustServings(1)"
+            aria-label="Aumentar raciones">
+            +
+          </button>
+          @if (selectedServings() !== r.searchIndex.servings) {
+            <span class="base-hint">(Base: {{ r.searchIndex.servings }})</span>
+          }
+        </div>
+
+        <button type="button" class="pwa-btn pwa-btn-primary launch-timer-btn" (click)="startRecipeTimer()">
+          ⏱️ Iniciar Temporizador Guiado
+        </button>
+      </div>
+    </header>
+
+    @if (compensationResult(); as comp) {
+      <app-compensation-banner
+        [recipe]="r"
+        [hardware]="hardwareStore.profile()"
+        [compensation]="comp"
+        [servings]="selectedServings()"
+        (servingsChange)="onServingsChange($event)"
+        (accessoryOverrideChange)="onAccessoryOverride($event)"
+        (startTimerRequest)="onStartBannerTimer($event)" />
+
+      @defer (on idle) {
+        <app-interactive-cooking-timer
+          [recipe]="r"
+          [compensation]="comp" />
+      } @placeholder {
+        <div class="pwa-card defer-placeholder">Cargando consola de temporizador...</div>
+      }
+    }
+
+    <div class="detail-columns">
+      <section class="pwa-card ingredients-card">
+        <div class="card-header">
+          <h2 class="section-heading">🧺 Ingredientes</h2>
+          <span class="Portion-badge">Para {{ selectedServings() }} raciones</span>
+        </div>
+
+        @for (group of scaledIngredientGroups(); track group.purpose) {
+          <div class="ingredient-group">
+            <h3 class="group-title">{{ group.purpose }}</h3>
+            <ul class="ingredient-list">
+              @for (item of group.items; track item.id) {
+                <li class="ingredient-row">
+                  <span class="ing-name">
+                    {{ item.name }}
+                    @if (item.optional) {
+                      <small class="ing-note">(opcional)</small>
+                    }
+                  </span>
+                  <strong class="ing-qty">
+                    {{ item.scaledQty | number:'1.0-1' }} {{ item.unit }}
+                  </strong>
+                </li>
+              }
+            </ul>
+          </div>
+        }
+
+        <div class="nutrition-summary">
+          <h3 class="group-title">Información nutricional (por ración)</h3>
+          <div class="macro-chips">
+            <span>🔥 {{ r.nutritionPerServing.kcal }} kcal</span>
+            <span>🥩 {{ r.nutritionPerServing.proteinG }}g Prot.</span>
+            <span>🌾 {{ r.nutritionPerServing.carbsG }}g Carb.</span>
+            <span>🥑 {{ r.nutritionPerServing.fatG }}g Grasas</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="pwa-card steps-card">
+        <div class="card-header">
+          <h2 class="section-heading">👨‍🍳 Pasos de Cocción Compensados</h2>
+          <span class="steps-hint">Toca un paso para marcarlo como completado</span>
+        </div>
+
+        @if (compensationResult(); as comp) {
+          <ol class="steps-list">
+            @for (step of comp.compensatedSteps; track step.step) {
+              <li
+                class="step-item"
+                [class.completed]="isStepCompleted(step.step)"
+                (click)="toggleStepCompletion(step.step)">
+                <div class="step-index">{{ isStepCompleted(step.step) ? '✓' : step.step }}</div>
+                <div class="step-content">
+                  <div class="step-head">
+                    <h3 class="step-title">Paso {{ step.step }}</h3>
+                    @if (step.timerSec) {
+                      <span class="step-duration">
+                        {{ step.isAirFryerActivePhase ? '🔥' : '⏱️' }}
+                        {{ step.timerSec | durationFormat:'human' }}
+                      </span>
+                    }
+                  </div>
+                  <p class="step-desc">{{ step.text }}</p>
+                </div>
+              </li>
+            }
+          </ol>
+        }
+      </section>
+    </div>
+
+    @if (compensationResult(); as comp) {
+      <app-personal-fork-editor
+        [recipeId]="r.id"
+        [fork]="activeFork()"
+        [compensation]="comp" />
+    }
+
+    @defer (on interaction) {
+      <app-community-tips-panel [recipeId]="r.id" />
+    } @placeholder {
+      <button type="button" class="pwa-card community-defer-trigger">
+        <div class="trigger-left">
+          <span class="trigger-icon">💬</span>
+          <div>
+            <strong>Ver Consejos de la Comunidad Air Fryer</strong>
+            <p>Pulsa para cargar trucos verificados por otros usuarios (ahorro de datos activo)</p>
+          </div>
+        </div>
+        <span class="pwa-btn pwa-btn-secondary">Cargar consejos</span>
+      </button>
+    }
+  }
+</div>

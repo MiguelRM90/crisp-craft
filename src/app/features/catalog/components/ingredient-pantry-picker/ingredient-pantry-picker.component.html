@@ -1,0 +1,49 @@
+@let selectedIds = catalogStore.selectedIngredientIds();
+@let ingredients = catalogStore.availableIngredients();
+
+<section class="pantry-box pwa-card pwa-card--subtle">
+  <div class="pantry-box__header">
+    <div class="pantry-box__title-group">
+      <strong>🧺 ¿Qué ingredientes tienes en casa?</strong>
+      <span class="pantry-box__subtitle">
+        Filtra por intersección instantánea (es-ES / es-LATAM)
+      </span>
+    </div>
+
+    <div class="pantry-box__actions">
+      @if (selectedIds.length > 0) {
+        <button
+          type="button"
+          class="pwa-btn pwa-btn--ghost pwa-btn--sm"
+          (click)="catalogStore.selectedIngredientIds.set([])"
+        >
+          Limpiar ({{ selectedIds.length }})
+        </button>
+      }
+      <button
+        type="button"
+        class="pwa-btn pwa-btn--secondary pwa-btn--sm"
+        (click)="isExpanded.set(!isExpanded())"
+      >
+        {{ isExpanded() ? 'Ocultar despensa ▲' : 'Elegir ingredientes ▼' }}
+      </button>
+    </div>
+  </div>
+
+  @if (isExpanded() || selectedIds.length > 0) {
+    <div class="pantry-pills">
+      @for (ing of ingredients; track ing.id) {
+        <button
+          type="button"
+          class="pantry-pill"
+          [class.pantry-pill--selected]="selectedIds.includes(ing.id)"
+          (click)="catalogStore.toggleIngredientFilter(ing.id)"
+        >
+          <span>{{ ing.label }}</span>
+          <small>({{ ing.count }})</small>
+        </button>
+      }
+    </div>
+  }
+</section>
+

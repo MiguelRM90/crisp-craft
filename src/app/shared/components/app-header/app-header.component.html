@@ -1,0 +1,46 @@
+@let hw = hardwareStore.profile();
+
+<pwa-header
+  title="CrispCraft"
+  [subtitle]="hw.modelAlias + ' · ' + capacityLabels[hw.basketCapacity]"
+  badgeText="Local-First"
+>
+  <a
+    header-logo
+    routerLink="/"
+    class="brand-logo"
+    aria-label="Ir al catálogo principal de CrispCraft"
+  >
+    🔥
+  </a>
+
+  <div header-actions class="header-actions">
+    <button
+      type="button"
+      class="pwa-btn pwa-btn--secondary pwa-btn--sm"
+      (click)="openQuickConverter.emit()"
+      title="Calculadora rápida de Horno o Congelados a Freidora de Aire"
+    >
+      ⚡ <span class="action-label">Conversor</span>
+    </button>
+
+    <button
+      type="button"
+      class="pwa-btn pwa-btn--secondary pwa-btn--sm"
+      (click)="openHardwareSettings.emit()"
+      title="Configurar mi freidora de aire y accesorios"
+    >
+      ⚙️ <span class="action-label">{{ hw.nominalPowerWatts }}W</span>
+    </button>
+
+    <button
+      type="button"
+      class="pwa-btn pwa-btn--ghost pwa-btn--sm"
+      (click)="theme.toggleTheme()"
+      [attr.aria-label]="theme.isDark() ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
+    >
+      {{ theme.isDark() ? '☀️' : '🌙' }}
+    </button>
+  </div>
+</pwa-header>
+

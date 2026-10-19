@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 1 Recipe = 1 Document Bundle (Spark Plan Quota Guard)
+    match /recipe_tip_bundles/{recipeId} {
+      allow read: if true;
+
+      allow create, update: if request.auth != null
+        && request.resource.data.keys().hasAll(['recipeId', 'totalTipsCount', 'updatedAtIso', 'topTips'])
+        && request.resource.data.recipeId == recipeId
+        && request.resource.data.topTips is list
+        && request.resource.data.topTips.size() <= 25;
+
+      allow delete: if false;
+    }
+  }
+}
+

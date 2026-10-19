@@ -1,0 +1,72 @@
+:host {
+  display: block;
+}
+
+.tips-panel {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tips-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.tips-panel__title {
+  margin: 0;
+  font-size: var(--pwa-text-base);
+  font-weight: 800;
+}
+
+.tips-panel__subtitle {
+  margin: 0.2rem 0 0 0;
+  font-size: var(--pwa-text-xs);
+  color: var(--pwa-text-secondary);
+}
+
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.tip-card {
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--pwa-radius-md);
+  background-color: var(--pwa-bg-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.tip-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--pwa-text-xs);
+  color: var(--pwa-text-secondary);
+}
+
+.tip-card__meta strong {
+  color: var(--pwa-text-primary);
+}
+
+.tip-card__comment {
+  margin: 0;
+  font-size: var(--pwa-text-sm);
+  line-height: 1.45;
+}
+
+.tip-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--pwa-border);
+}
+

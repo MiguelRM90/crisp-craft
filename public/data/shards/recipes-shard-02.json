@@ -1,0 +1,803 @@
+{
+  "shardId": "shard-02",
+  "version": "1.0.0",
+  "recipes": {
+    "es_af_00007": {
+      "id": "es_af_00007",
+      "slug": "garbanzos-especiados-snack-crujiente",
+      "title": "Snack de Garbanzos Tostados al Pimentón y Limón",
+      "lang": "es-ES",
+      "originRegion": "ES",
+      "sourceMeta": {
+        "adaptationType": "native_air_fryer",
+        "license": "OpenRAIL",
+        "canonicalRef": "somosnlp/RecetasDeLaAbuela#3105"
+      },
+      "searchIndex": {
+        "prepMin": 5,
+        "cookMin": 14,
+        "totalMin": 19,
+        "difficulty": 1,
+        "servings": 4,
+        "mealCategory": "snack",
+        "dietTags": [
+          "vegano",
+          "vegetariano",
+          "alto_en_proteina",
+          "sin_gluten",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "garbanzos_cocidos",
+          "pimenton_dulce",
+          "ajo_polvo",
+          "aceite_oliva",
+          "limon"
+        ],
+        "ingCount": 5,
+        "stepCount": 3
+      },
+      "afProfile": {
+        "baseTempC": 195,
+        "baseTempF": 385,
+        "preheatMin": 3,
+        "singleLayerRequired": false,
+        "oilSprayRequired": true,
+        "foodPhysicsClass": "tender_vegetables",
+        "referenceLoadG": 400,
+        "hardwareMultipliers": {
+          "compact1000w3l": 1.15,
+          "standard1500w5l": 1,
+          "highPower2000w6l": 0.9
+        },
+        "massScalingCurve": [
+          {
+            "loadG": 200,
+            "timeFactor": 0.8
+          },
+          {
+            "loadG": 400,
+            "timeFactor": 1
+          },
+          {
+            "loadG": 700,
+            "timeFactor": 1.25,
+            "batchWarning": true
+          }
+        ],
+        "actionTriggers": [
+          {
+            "type": "shake_basket",
+            "pctTrigger": 0.5,
+            "defaultMin": 7,
+            "label": "Agitar la cesta para que los garbanzos rueden y se tuesten de forma homogénea."
+          }
+        ]
+      },
+      "ingredientGroups": [
+        {
+          "purpose": "Garbanzos y aliño post-tostado",
+          "items": [
+            {
+              "id": "garbanzos_cocidos",
+              "name": "Garbanzos cocidos escurridos y secos",
+              "qty": 400,
+              "unit": "g"
+            },
+            {
+              "id": "aceite_oliva",
+              "name": "Aceite de oliva virgen extra",
+              "qty": 10,
+              "unit": "ml"
+            },
+            {
+              "id": "pimenton_dulce",
+              "name": "Pimentón de la Vera",
+              "qty": 4,
+              "unit": "g"
+            },
+            {
+              "id": "ajo_polvo",
+              "name": "Ajo en polvo y comino",
+              "qty": 4,
+              "unit": "g"
+            },
+            {
+              "id": "limon",
+              "name": "Ralladura de limón",
+              "qty": 3,
+              "unit": "g"
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "text": "Enjuagar los garbanzos, escurrirlos y secarlos muy bien con papel de cocina. Rociar únicamente con el aceite y sal (añadir las especias al final evita que se amarguen)."
+        },
+        {
+          "step": 2,
+          "text": "Cocinar a 195 °C durante 14 minutos, agitando la cesta en el minuto 7 hasta que estén suflados y crujientes.",
+          "timerSec": 840,
+          "isAirFryerActivePhase": true
+        },
+        {
+          "step": 3,
+          "text": "En caliente, espolvorear el pimentón, el ajo en polvo y la ralladura de limón para que se adhieran al aceite residual."
+        }
+      ],
+      "nutritionPerServing": {
+        "kcal": 165,
+        "proteinG": 8.8,
+        "fatG": 4.5,
+        "carbsG": 22.4,
+        "fiberG": 6.8,
+        "nutriscoreEst": "A",
+        "dataSource": "OFF_ODbL_USDA_CC0"
+      },
+      "shardId": "shard-02"
+    },
+    "es_af_00008": {
+      "id": "es_af_00008",
+      "slug": "bastones-boniato-camote-crujientes-parmesano",
+      "title": "Bastones de Boniato / Camote Asados al Parmesano",
+      "lang": "es-ES",
+      "originRegion": "ES",
+      "sourceMeta": {
+        "adaptationType": "oven_converted_and_verified",
+        "license": "OpenRAIL",
+        "canonicalRef": "somosnlp/RecetasDeLaAbuela#5190"
+      },
+      "searchIndex": {
+        "prepMin": 10,
+        "cookMin": 18,
+        "totalMin": 28,
+        "difficulty": 1,
+        "servings": 3,
+        "mealCategory": "guarnicion",
+        "dietTags": [
+          "vegetariano",
+          "sin_gluten",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "boniato",
+          "queso_parmesano",
+          "aceite_oliva",
+          "ajo_polvo"
+        ],
+        "ingCount": 4,
+        "stepCount": 3
+      },
+      "afProfile": {
+        "baseTempC": 195,
+        "baseTempF": 385,
+        "preheatMin": 4,
+        "singleLayerRequired": true,
+        "oilSprayRequired": true,
+        "foodPhysicsClass": "root_vegetables_bastons",
+        "referenceLoadG": 500,
+        "hardwareMultipliers": {
+          "compact1000w3l": 1.15,
+          "standard1500w5l": 1,
+          "highPower2000w6l": 0.9
+        },
+        "massScalingCurve": [
+          {
+            "loadG": 250,
+            "timeFactor": 0.82
+          },
+          {
+            "loadG": 500,
+            "timeFactor": 1
+          },
+          {
+            "loadG": 850,
+            "timeFactor": 1.25,
+            "batchWarning": true
+          }
+        ],
+        "actionTriggers": [
+          {
+            "type": "shake_basket",
+            "pctTrigger": 0.5,
+            "defaultMin": 9,
+            "label": "Sacudir los bastones de boniato para evitar que se peguen entre sí."
+          },
+          {
+            "type": "add_topping",
+            "pctTrigger": 0.83,
+            "defaultMin": 15,
+            "label": "Espolvorear el queso parmesano rallado fino para los últimos 3 minutos."
+          }
+        ]
+      },
+      "ingredientGroups": [
+        {
+          "purpose": "Boniato y costra",
+          "items": [
+            {
+              "id": "boniato",
+              "name": "Boniato / Camote naranja cortado en bastones de 1 cm",
+              "qty": 500,
+              "unit": "g"
+            },
+            {
+              "id": "aceite_oliva",
+              "name": "Aceite de oliva virgen extra",
+              "qty": 12,
+              "unit": "ml"
+            },
+            {
+              "id": "queso_parmesano",
+              "name": "Queso parmesano rallado fino",
+              "qty": 35,
+              "unit": "g"
+            },
+            {
+              "id": "ajo_polvo",
+              "name": "Ajo en polvo y orégano",
+              "qty": 4,
+              "unit": "g"
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "text": "Cortar el boniato en bastones de 1 cm de grosor, secar bien y mezclar con el aceite de oliva y el ajo en polvo."
+        },
+        {
+          "step": 2,
+          "text": "Cocinar a 195 °C durante 15 minutos sin amontonar en exceso, sacudiendo la cesta en el minuto 9.",
+          "timerSec": 900,
+          "isAirFryerActivePhase": true
+        },
+        {
+          "step": 3,
+          "text": "Espolvorear el parmesano rallado sobre los bastones y dorar los últimos 3 minutos a 195 °C.",
+          "timerSec": 180,
+          "isAirFryerActivePhase": true
+        }
+      ],
+      "nutritionPerServing": {
+        "kcal": 225,
+        "proteinG": 6.2,
+        "fatG": 7.5,
+        "carbsG": 34.1,
+        "fiberG": 4.8,
+        "nutriscoreEst": "A",
+        "dataSource": "OFF_ODbL_USDA_CC0"
+      },
+      "shardId": "shard-02"
+    },
+    "es_af_00009": {
+      "id": "es_af_00009",
+      "slug": "chips-calabacin-crujientes-parmesano-panko",
+      "title": "Medallones de Calabacín / Zucchini Crujientes al Panko",
+      "lang": "es-ES",
+      "originRegion": "ES",
+      "sourceMeta": {
+        "adaptationType": "native_air_fryer",
+        "license": "OpenRAIL",
+        "canonicalRef": "somosnlp/RecetasDeLaAbuela#1890"
+      },
+      "searchIndex": {
+        "prepMin": 10,
+        "cookMin": 11,
+        "totalMin": 21,
+        "difficulty": 1,
+        "servings": 2,
+        "mealCategory": "aperitivo",
+        "dietTags": [
+          "vegetariano",
+          "bajo_en_carbohidratos"
+        ],
+        "mainIngIds": [
+          "calabacin",
+          "huevo",
+          "pan_rallado",
+          "queso_parmesano",
+          "aceite_oliva"
+        ],
+        "ingCount": 5,
+        "stepCount": 3
+      },
+      "afProfile": {
+        "baseTempC": 200,
+        "baseTempF": 390,
+        "preheatMin": 3,
+        "singleLayerRequired": true,
+        "oilSprayRequired": true,
+        "foodPhysicsClass": "battered_or_breaded",
+        "referenceLoadG": 350,
+        "hardwareMultipliers": {
+          "compact1000w3l": 1.12,
+          "standard1500w5l": 1,
+          "highPower2000w6l": 0.9
+        },
+        "massScalingCurve": [
+          {
+            "loadG": 200,
+            "timeFactor": 0.85
+          },
+          {
+            "loadG": 350,
+            "timeFactor": 1
+          },
+          {
+            "loadG": 600,
+            "timeFactor": 1.25,
+            "batchWarning": true
+          }
+        ],
+        "actionTriggers": [
+          {
+            "type": "flip_and_spray",
+            "pctTrigger": 0.55,
+            "defaultMin": 6,
+            "label": "Dar la vuelta a las rodajas de calabacín y aplicar un toque ligero de aceite en spray."
+          }
+        ]
+      },
+      "ingredientGroups": [
+        {
+          "purpose": "Empanado crujiente",
+          "items": [
+            {
+              "id": "calabacin",
+              "name": "Calabacín / Zucchini firme en rodajas de 7 mm",
+              "qty": 350,
+              "unit": "g"
+            },
+            {
+              "id": "huevo",
+              "name": "Huevo batido",
+              "qty": 1,
+              "unit": "ud"
+            },
+            {
+              "id": "pan_rallado",
+              "name": "Pan rallado grueso o Panko",
+              "qty": 50,
+              "unit": "g"
+            },
+            {
+              "id": "queso_parmesano",
+              "name": "Queso parmesano rallado",
+              "qty": 30,
+              "unit": "g"
+            },
+            {
+              "id": "aceite_oliva",
+              "name": "Aceite de oliva en spray",
+              "qty": 10,
+              "unit": "ml"
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "text": "Secar las rodajas de calabacín con papel absorbente, pasarlas por huevo batido y rebozar en la mezcla de panko y parmesano presionando bien."
+        },
+        {
+          "step": 2,
+          "text": "Disponer en una sola capa en la cesta precalentada a 200 °C, pulverizar aceite y cocinar 6 minutos.",
+          "timerSec": 360,
+          "isAirFryerActivePhase": true
+        },
+        {
+          "step": 3,
+          "text": "Voltear los medallones y dorar los 5 minutos restantes a 200 °C hasta que el rebozado cruja.",
+          "timerSec": 300,
+          "isAirFryerActivePhase": true
+        }
+      ],
+      "nutritionPerServing": {
+        "kcal": 210,
+        "proteinG": 11.4,
+        "fatG": 9.2,
+        "carbsG": 19.5,
+        "fiberG": 2.3,
+        "nutriscoreEst": "A",
+        "dataSource": "OFF_ODbL_USDA_CC0"
+      },
+      "shardId": "shard-02"
+    },
+    "es_af_00010": {
+      "id": "es_af_00010",
+      "slug": "langostinos-ajillo-limon-express",
+      "title": "Langostinos / Camarones al Ajillo y Limón Express",
+      "lang": "es-ES",
+      "originRegion": "ES",
+      "sourceMeta": {
+        "adaptationType": "native_air_fryer",
+        "license": "OpenRAIL",
+        "canonicalRef": "somosnlp/RecetasDeLaAbuela#7012"
+      },
+      "searchIndex": {
+        "prepMin": 6,
+        "cookMin": 7,
+        "totalMin": 13,
+        "difficulty": 1,
+        "servings": 2,
+        "mealCategory": "aperitivo",
+        "dietTags": [
+          "alto_en_proteina",
+          "bajo_en_carbohidratos",
+          "keto",
+          "sin_gluten",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "langostinos",
+          "aceite_oliva",
+          "ajo_polvo",
+          "pimenton_dulce",
+          "limon"
+        ],
+        "ingCount": 5,
+        "stepCount": 2
+      },
+      "afProfile": {
+        "baseTempC": 195,
+        "baseTempF": 385,
+        "preheatMin": 3,
+        "singleLayerRequired": true,
+        "oilSprayRequired": true,
+        "foodPhysicsClass": "lean_protein",
+        "referenceLoadG": 350,
+        "hardwareMultipliers": {
+          "compact1000w3l": 1.1,
+          "standard1500w5l": 1,
+          "highPower2000w6l": 0.85
+        },
+        "massScalingCurve": [
+          {
+            "loadG": 200,
+            "timeFactor": 0.85
+          },
+          {
+            "loadG": 350,
+            "timeFactor": 1
+          },
+          {
+            "loadG": 600,
+            "timeFactor": 1.2,
+            "batchWarning": true
+          }
+        ],
+        "actionTriggers": [
+          {
+            "type": "shake_basket",
+            "pctTrigger": 0.57,
+            "defaultMin": 4,
+            "label": "Agitar la cesta a los 4 minutos para que los langostinos se cocinen por igual sin secarse."
+          }
+        ]
+      },
+      "ingredientGroups": [
+        {
+          "purpose": "Marisco y emulsión de ajo",
+          "items": [
+            {
+              "id": "langostinos",
+              "name": "Langostinos o camarones crudos pelados",
+              "qty": 350,
+              "unit": "g"
+            },
+            {
+              "id": "aceite_oliva",
+              "name": "Aceite de oliva virgen extra",
+              "qty": 15,
+              "unit": "ml"
+            },
+            {
+              "id": "ajo_polvo",
+              "name": "Ajo laminado o en polvo",
+              "qty": 5,
+              "unit": "g"
+            },
+            {
+              "id": "pimenton_dulce",
+              "name": "Pimentón dulce o picante",
+              "qty": 2,
+              "unit": "g"
+            },
+            {
+              "id": "limon",
+              "name": "Zumo de limón fresco al servir",
+              "qty": 10,
+              "unit": "ml"
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "text": "Secar los langostinos pelados y mezclarlos en un bol con el aceite de oliva, el ajo y una pizca de pimentón."
+        },
+        {
+          "step": 2,
+          "text": "Cocinar en la cesta precalentada a 195 °C durante 7 minutos exactos, agitando en el minuto 4. Regar con zumo de limón recién exprimido al sacar.",
+          "timerSec": 420,
+          "isAirFryerActivePhase": true
+        }
+      ],
+      "nutritionPerServing": {
+        "kcal": 220,
+        "proteinG": 32.5,
+        "fatG": 8.8,
+        "carbsG": 1.5,
+        "nutriscoreEst": "A",
+        "dataSource": "OFF_ODbL_USDA_CC0"
+      },
+      "shardId": "shard-02"
+    },
+    "es_af_00011": {
+      "id": "es_af_00011",
+      "slug": "solomillo-cerdo-mostaza-miel-jugoso",
+      "title": "Solomillo de Cerdo Asado con Costra de Miel y Ajo",
+      "lang": "es-ES",
+      "originRegion": "ES",
+      "sourceMeta": {
+        "adaptationType": "oven_converted_and_verified",
+        "license": "OpenRAIL",
+        "canonicalRef": "somosnlp/RecetasDeLaAbuela#8402"
+      },
+      "searchIndex": {
+        "prepMin": 8,
+        "cookMin": 18,
+        "totalMin": 26,
+        "difficulty": 1,
+        "servings": 3,
+        "mealCategory": "principal",
+        "dietTags": [
+          "alto_en_proteina",
+          "sin_gluten",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "cerdo_solomillo",
+          "miel",
+          "ajo_polvo",
+          "aceite_oliva"
+        ],
+        "ingCount": 4,
+        "stepCount": 3
+      },
+      "afProfile": {
+        "baseTempC": 190,
+        "baseTempF": 375,
+        "preheatMin": 5,
+        "singleLayerRequired": true,
+        "oilSprayRequired": true,
+        "foodPhysicsClass": "lean_protein_with_topping",
+        "referenceLoadG": 550,
+        "hardwareMultipliers": {
+          "compact1000w3l": 1.15,
+          "standard1500w5l": 1,
+          "highPower2000w6l": 0.9
+        },
+        "massScalingCurve": [
+          {
+            "loadG": 350,
+            "timeFactor": 0.85
+          },
+          {
+            "loadG": 550,
+            "timeFactor": 1
+          },
+          {
+            "loadG": 950,
+            "timeFactor": 1.22,
+            "batchWarning": true
+          }
+        ],
+        "actionTriggers": [
+          {
+            "type": "flip_food",
+            "pctTrigger": 0.5,
+            "defaultMin": 9,
+            "label": "Girar el solomillo 180 grados para sellar la cara inferior."
+          },
+          {
+            "type": "add_topping",
+            "pctTrigger": 0.78,
+            "defaultMin": 14,
+            "label": "Pincelar con la reducción de miel y ajo para caramelizar los últimos 4 minutos."
+          }
+        ]
+      },
+      "ingredientGroups": [
+        {
+          "purpose": "Solomillo y lacado",
+          "items": [
+            {
+              "id": "cerdo_solomillo",
+              "name": "Solomillo de cerdo entero limpio",
+              "qty": 550,
+              "unit": "g"
+            },
+            {
+              "id": "miel",
+              "name": "Miel pura",
+              "qty": 20,
+              "unit": "g"
+            },
+            {
+              "id": "ajo_polvo",
+              "name": "Ajo granulado y romero",
+              "qty": 5,
+              "unit": "g"
+            },
+            {
+              "id": "aceite_oliva",
+              "name": "Aceite de oliva virgen extra",
+              "qty": 12,
+              "unit": "ml"
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "text": "Atar o doblar la punta fina del solomillo para que tenga un grosor uniforme. Masajear con aceite de oliva, sal y ajo granulado."
+        },
+        {
+          "step": 2,
+          "text": "Asar a 190 °C durante 14 minutos, volteando la pieza en el minuto 9.",
+          "timerSec": 840,
+          "isAirFryerActivePhase": true
+        },
+        {
+          "step": 3,
+          "text": "Pincelar con la miel templada, asar los 4 minutos finales a 190 °C y dejar reposar 5 minutos en tabla antes de medallonar.",
+          "timerSec": 240,
+          "isAirFryerActivePhase": true
+        }
+      ],
+      "nutritionPerServing": {
+        "kcal": 285,
+        "proteinG": 39,
+        "fatG": 10.5,
+        "carbsG": 7.2,
+        "nutriscoreEst": "A",
+        "dataSource": "OFF_ODbL_USDA_CC0"
+      },
+      "shardId": "shard-02"
+    },
+    "es_af_00012": {
+      "id": "es_af_00012",
+      "slug": "manzanas-asadas-canela-avena-crujiente",
+      "title": "Manzanas Asadas Rellenas de Crumble de Avena y Miel",
+      "lang": "es-ES",
+      "originRegion": "ES",
+      "sourceMeta": {
+        "adaptationType": "oven_converted_and_verified",
+        "license": "OpenRAIL",
+        "canonicalRef": "somosnlp/RecetasDeLaAbuela#9011"
+      },
+      "searchIndex": {
+        "prepMin": 8,
+        "cookMin": 16,
+        "totalMin": 24,
+        "difficulty": 1,
+        "servings": 2,
+        "mealCategory": "reposteria",
+        "dietTags": [
+          "vegetariano",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "manzana",
+          "avena_copos",
+          "harina_almendra",
+          "miel"
+        ],
+        "ingCount": 4,
+        "stepCount": 2
+      },
+      "afProfile": {
+        "baseTempC": 175,
+        "baseTempF": 345,
+        "preheatMin": 3,
+        "singleLayerRequired": true,
+        "oilSprayRequired": false,
+        "foodPhysicsClass": "bakery_pastry_dough",
+        "referenceLoadG": 420,
+        "hardwareMultipliers": {
+          "compact1000w3l": 1.12,
+          "standard1500w5l": 1,
+          "highPower2000w6l": 0.9
+        },
+        "massScalingCurve": [
+          {
+            "loadG": 210,
+            "timeFactor": 0.88
+          },
+          {
+            "loadG": 420,
+            "timeFactor": 1
+          },
+          {
+            "loadG": 800,
+            "timeFactor": 1.2,
+            "batchWarning": true
+          }
+        ],
+        "actionTriggers": [
+          {
+            "type": "check_doneness",
+            "pctTrigger": 0.75,
+            "defaultMin": 12,
+            "label": "Comprobar el dorado del crumble de avena; cubrir con aluminio si tuesta muy rápido."
+          }
+        ]
+      },
+      "ingredientGroups": [
+        {
+          "purpose": "Fruta y crumble",
+          "items": [
+            {
+              "id": "manzana",
+              "name": "Manzanas Reineta o Fuji descorazonadas",
+              "qty": 2,
+              "unit": "ud"
+            },
+            {
+              "id": "avena_copos",
+              "name": "Copos de avena suaves",
+              "qty": 30,
+              "unit": "g"
+            },
+            {
+              "id": "harina_almendra",
+              "name": "Almendra picada o harina de almendra",
+              "qty": 20,
+              "unit": "g"
+            },
+            {
+              "id": "miel",
+              "name": "Miel y canela en polvo",
+              "qty": 15,
+              "unit": "g"
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "text": "Descorazonar las manzanas sin perforar la base y rellenar el hueco central con la mezcla de copos de avena, almendra, miel y canela."
+        },
+        {
+          "step": 2,
+          "text": "Hornear en la freidora de aire a 175 °C durante 16 minutos hasta que la pulpa esté tierna al pincharla y la avena crujiente.",
+          "timerSec": 960,
+          "isAirFryerActivePhase": true
+        }
+      ],
+      "nutritionPerServing": {
+        "kcal": 245,
+        "proteinG": 4.8,
+        "fatG": 6.4,
+        "carbsG": 44.2,
+        "fiberG": 6.1,
+        "nutriscoreEst": "A",
+        "dataSource": "OFF_ODbL_USDA_CC0"
+      },
+      "shardId": "shard-02"
+    }
+  }
+}

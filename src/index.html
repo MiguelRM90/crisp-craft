@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>CrispCraft — Recetas y Compensador Air Fryer</title>
+    <base href="./" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Recetario inteligente Local-First y compensador termodinámico de tiempos y temperaturas para freidora de aire."
+    />
+    <meta name="theme-color" content="#ea580c" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="CrispCraft" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script>
+      (function () {
+        const theme = localStorage.getItem('app_theme');
+        if (
+          theme === 'dark' ||
+          (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <app-root></app-root>
+    <noscript>Activa JavaScript para utilizar CrispCraft.</noscript>
+  </body>
+</html>
+

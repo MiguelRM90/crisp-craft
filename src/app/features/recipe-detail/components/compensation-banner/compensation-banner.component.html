@@ -1,0 +1,151 @@
+@let rec = recipe();
+@let hw = hardware();
+@let comp = compensation();
+@let split = comp.batchSplitPlan;
+
+<section class="pwa-card comp-card">
+  <div class="comp-card__header">
+    <div class="comp-card__title-group">
+      <div class="comp-card__badges">
+        <pwa-badge variant="info">
+          ⚙️ Compensador: {{ hw.modelAlias }} ({{ capacityLabels[hw.basketCapacity] }})
+        </pwa-badge>
+        @if (comp.isOverriddenByPersonalFork) {
+          <pwa-badge variant="warning">📌 Tiempo/Temp fijado por tu Fork Personal</pwa-badge>
+        } @else {
+          <pwa-badge variant="success">Factor térmico ×{{ comp.totalTimeMultiplier }}</pwa-badge>
+        }
+      </div>
+      <p class="comp-card__desc">
+        Receta base (5L / 1500W): {{ rec.afProfile.baseTempC }} °C ·
+        {{ rec.searchIndex.cookMin }} min ({{ rec.afProfile.referenceLoadG }} g)
+      </p>
+    </div>
+
+    <button type="button" class="pwa-btn pwa-btn--primary" (click)="onLaunchMainTimer()">
+      ⏱ Iniciar Temporizador ({{
+        useMultiBatchMode() && split ? split.firstBatchCookMin : comp.effectiveCookMin
+      }}
+      min)
+    </button>
+  </div>
+
+  <div class="comp-metrics-grid">
+    <div class="comp-metric">
+      <span class="comp-metric__label">Temperatura Efectiva</span>
+      <strong class="comp-metric__val">
+        {{ comp.effectiveTempC | temperatureUnit: hw.preferredTempUnit }}
+      </strong>
+      @if (comp.tempDeltaC !== 0) {
+        <small>{{ comp.tempDeltaC > 0 ? '+' : '' }}{{ comp.tempDeltaC }} °C por accesorio/equipo</small>
+      }
+    </div>
+
+    <div class="comp-metric">
+      <span class="comp-metric__label">Tiempo Compensado</span>
+      <strong class="comp-metric__val">{{ comp.effectiveCookMin }} min</strong>
+      <small>Carga total: {{ comp.targetLoadG }} g</small>
+    </div>
+
+    <div class="comp-metric">
+      <span class="comp-metric__label">Precalentado</span>
+      <strong class="comp-metric__val">
+        {{ comp.effectivePreheatMin > 0 ? comp.effectivePreheatMin + ' min' : 'Sin precalentar' }}
+      </strong>
+      <small>
+        {{ rec.afProfile.oilSprayRequired ? '✨ Requiere aceite en spray' : 'Sin spray extra' }}
+      </small>
+    </div>
+  </div>
+
+  <div class="pwa-grid-2 comp-controls">
+    <pwa-numeric-slider
+      label="Raciones a preparar (escala masa y curva de tiempo)"
+      [value]="servings()"
+      [min]="1"
+      [max]="10"
+      [step]="1"
+      unit="raciones"
+      (valueChange)="servingsChange.emit($event)"
+    />
+
+    <div class="pwa-input-group">
+      <label class="pwa-label" for="recipe-accessory-override">
+        Accesorio usado en esta cocción
+      </label>
+      <select
+        id="recipe-accessory-override"
+        class="pwa-select"
+        [value]="comp.activeAccessory"
+        (change)="onAccessorySelect($event)"
+      >
+        @for (opt of accessoryOptions; track opt.value) {
+          <option [value]="opt.value" [selected]="comp.activeAccessory === opt.value">
+            {{ opt.label }}
+          </option>
+        }
+      </select>
+    </div>
+  </div>
+
+  @if (comp.isBatchWarningActive && split) {
+    <div class="pwa-card batch-warning-box">
+      <div class="batch-warning-box__info">
+        <strong>
+          ⚠️ Alerta de saturación de cesta ({{ comp.targetLoadG }} g en cesta
+          {{ capacityLabels[hw.basketCapacity] }})
+        </strong>
+        <p>
+          Apilar esta cantidad bloquea la convección vertical y cocerá el alimento al vapor.
+          Recomendación: dividir en <strong>{{ split.recommendedBatches }} tandas</strong> de
+          <strong>{{ split.loadPerBatchG }} g</strong> ({{ split.firstBatchCookMin }} min la 1.ª
+          tanda y <strong>{{ split.subsequentBatchCookMin }} min</strong> la 2.ª tanda por inercia
+          térmica).
+        </p>
+      </div>
+      <div class="batch-warning-box__actions">
+        <button
+          type="button"
+          class="pwa-btn pwa-btn--sm"
+          [class.pwa-btn--primary]="useMultiBatchMode()"
+          [class.pwa-btn--secondary]="!useMultiBatchMode()"
+          (click)="useMultiBatchMode.set(!useMultiBatchMode())"
+        >
+          {{
+            useMultiBatchMode()
+              ? '✓ Modo ' + split.recommendedBatches + ' tandas activado'
+              : 'Dividir en ' + split.recommendedBatches + ' tandas óptimas'
+          }}
+        </button>
+
+        @if (useMultiBatchMode()) {
+          <button
+            type="button"
+            class="pwa-btn pwa-btn--secondary pwa-btn--sm"
+            (click)="onLaunchSecondBatchTimer()"
+          >
+            ⏱ Lanzar 2.ª tanda ({{ split.subsequentBatchCookMin }} min)
+          </button>
+        }
+      </div>
+    </div>
+  }
+
+  <div class="triggers-section">
+    <span class="pwa-label">Alertas dinámicas de intervención mecánica (Agitado / Volteo)</span>
+    <div class="triggers-list">
+      @for (trig of comp.triggers; track trig.type + trig.pctTrigger) {
+        <div class="trigger-item" [class.trigger-item--suppressed]="trig.suppressedByDualElement">
+          <span class="trigger-item__time">Min {{ trig.compensatedMinuteMark }}</span>
+          <div class="trigger-item__body">
+            <span>{{ trig.label }}</span>
+            @if (trig.suppressedByDualElement) {
+              <small>✓ Opcional en tu freidora por tener doble resistencia activa.</small>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,158 @@
+@let hw = hardwareStore.profile();
+
+<pwa-modal
+  [isOpen]="isOpen()"
+  title="Calibración de Mi Freidora de Aire"
+  subtitle="Ajusta el volumen, potencia y accesorios para recalcular todas las recetas"
+  maxWidth="38rem"
+  (close)="close.emit()"
+>
+  <div class="settings-form">
+    <div class="pwa-input-group">
+      <label class="pwa-label" for="fryer-alias-input">Nombre o modelo de tu freidora</label>
+      <input
+        id="fryer-alias-input"
+        type="text"
+        class="pwa-input"
+        [value]="hw.modelAlias"
+        (input)="onModelAliasChange($event)"
+        placeholder="Ej. Cosori Dual Blaze 6.4L, Cecotec 5.5L..."
+      />
+    </div>
+
+    <div class="pwa-input-group">
+      <span class="pwa-label">Capacidad de cesta</span>
+      <div class="option-grid">
+        @for (cap of capacityEntries; track cap.key) {
+          <button
+            type="button"
+            class="pwa-card option-card"
+            [class.option-card--selected]="hw.basketCapacity === cap.key"
+            (click)="onCapacityChange(cap.key)"
+          >
+            {{ cap.label }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <pwa-numeric-slider
+      label="Potencia nominal del equipo"
+      [value]="hw.nominalPowerWatts"
+      [min]="900"
+      [max]="2400"
+      [step]="50"
+      unit="W"
+      (valueChange)="onPowerWattsChange($event)"
+    />
+
+    <div class="pwa-grid-2">
+      <button
+        type="button"
+        class="pwa-card toggle-card"
+        [class.toggle-card--active]="hw.hasDualHeatingElement"
+        (click)="hardwareStore.toggleDualHeatingElement()"
+      >
+        <strong>🔥 Doble resistencia (Arriba + Abajo)</strong>
+        <span>Reduce tiempos un ~10% y evita dar la vuelta en carnes/alitas.</span>
+      </button>
+
+      <button
+        type="button"
+        class="pwa-card toggle-card"
+        [class.toggle-card--active]="hw.isDualBasketSharedPower"
+        (click)="hardwareStore.toggleDualBasketSharedPower()"
+      >
+        <strong>🧺🧺 Doble Cesta en modo Sync (+10% t)</strong>
+        <span>Actívalo si cocinas en ambos cajones simultáneamente.</span>
+      </button>
+    </div>
+
+    <div class="pwa-input-group">
+      <label class="pwa-label" for="modal-accessory-select">Accesorio o protector habitual</label>
+      <select
+        id="modal-accessory-select"
+        class="pwa-select"
+        [value]="hw.defaultAccessory"
+        (change)="onAccessoryChange($event)"
+      >
+        @for (acc of accessoryEntries; track acc.key) {
+          <option [value]="acc.key" [selected]="hw.defaultAccessory === acc.key">
+            {{ acc.label }}
+          </option>
+        }
+      </select>
+    </div>
+
+    <div class="pwa-grid-2">
+      <div class="pwa-input-group">
+        <span class="pwa-label">Techo térmico máximo</span>
+        <div class="inline-pills">
+          @for (ceiling of [200, 205, 230]; track ceiling) {
+            <button
+              type="button"
+              class="pwa-btn pwa-btn--sm"
+              [class.pwa-btn--primary]="hw.maxTempCelsius === ceiling"
+              [class.pwa-btn--secondary]="hw.maxTempCelsius !== ceiling"
+              (click)="onMaxTempChange(ceiling === 230 ? 230 : ceiling === 205 ? 205 : 200)"
+            >
+              {{ ceiling }} °C
+            </button>
+          }
+        </div>
+      </div>
+
+      <div class="pwa-input-group">
+        <span class="pwa-label">Unidad y Precalentado</span>
+        <div class="inline-pills">
+          <button
+            type="button"
+            class="pwa-btn pwa-btn--sm"
+            [class.pwa-btn--primary]="hw.preferredTempUnit === 'C'"
+            [class.pwa-btn--secondary]="hw.preferredTempUnit !== 'C'"
+            (click)="onTempUnitChange('C')"
+          >
+            °C
+          </button>
+          <button
+            type="button"
+            class="pwa-btn pwa-btn--sm"
+            [class.pwa-btn--primary]="hw.preferredTempUnit === 'F'"
+            [class.pwa-btn--secondary]="hw.preferredTempUnit !== 'F'"
+            (click)="onTempUnitChange('F')"
+          >
+            °F
+          </button>
+          <button
+            type="button"
+            class="pwa-btn pwa-btn--sm"
+            [class.pwa-btn--primary]="hw.enablePreheatingByDefault"
+            [class.pwa-btn--secondary]="!hw.enablePreheatingByDefault"
+            (click)="onTogglePreheat()"
+          >
+            Precalentar: {{ hw.enablePreheatingByDefault ? 'SÍ' : 'NO' }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pwa-card pwa-card--subtle backup-box">
+      <div>
+        <strong>Copia de seguridad Local-First (Personal Forks)</strong>
+        <p class="backup-box__desc">
+          Descarga tus tiempos personalizados, notas y favoritos guardados en IndexedDB.
+        </p>
+      </div>
+      <button type="button" class="pwa-btn pwa-btn--secondary pwa-btn--sm" (click)="onExportPersonalForks()">
+        ⬇ Exportar JSON
+      </button>
+    </div>
+  </div>
+
+  <div modal-footer>
+    <button type="button" class="pwa-btn pwa-btn--primary" (click)="close.emit()">
+      Listo y Aplicado
+    </button>
+  </div>
+</pwa-modal>
+

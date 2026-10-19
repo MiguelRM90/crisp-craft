@@ -1,0 +1,74 @@
+:host {
+  display: contents;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0.5rem;
+}
+
+.option-card {
+  padding: 0.7rem 0.85rem;
+  font-size: var(--pwa-text-xs);
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--pwa-bg-subtle);
+  color: var(--pwa-text-secondary);
+}
+
+.option-card--selected {
+  border-color: var(--pwa-brand-500);
+  background-color: var(--pwa-brand-soft);
+  color: var(--pwa-brand-text);
+}
+
+.toggle-card {
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  text-align: left;
+  cursor: pointer;
+  font-size: var(--pwa-text-xs);
+  color: var(--pwa-text-secondary);
+}
+
+.toggle-card strong {
+  color: var(--pwa-text-primary);
+  font-size: var(--pwa-text-sm);
+}
+
+.toggle-card--active {
+  border-color: var(--pwa-brand-500);
+  background-color: var(--pwa-brand-soft);
+}
+
+.inline-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.backup-box {
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: var(--pwa-text-xs);
+}
+
+.backup-box__desc {
+  margin: 0.2rem 0 0 0;
+  color: var(--pwa-text-secondary);
+}
+

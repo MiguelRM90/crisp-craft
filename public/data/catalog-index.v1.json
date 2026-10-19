@@ -1,0 +1,510 @@
+{
+  "version": "1.0.0",
+  "generatedAtIso": "2026-10-19T14:59:23.239Z",
+  "totalRecipes": 12,
+  "shardCount": 2,
+  "canonicalIngredients": {
+    "pollo_pechuga": "Pechuga de pollo",
+    "pollo_alitas": "Alitas de pollo",
+    "pollo_muslos": "Contramuslos de pollo",
+    "salmon_lomo": "Lomo de salmón",
+    "merluza_lomo": "Lomo de merluza",
+    "patata": "Patata / Papa",
+    "boniato": "Boniato / Camote",
+    "calabacin": "Calabacín / Zucchini",
+    "berenjena": "Berenjena",
+    "pimiento_rojo": "Pimiento morrón rojo",
+    "brocoli": "Brócoli fresco",
+    "coliflor": "Coliflor",
+    "garbanzos_cocidos": "Garbanzos cocidos",
+    "tofu_firme": "Tofu firme",
+    "platano_macho": "Plátano macho / Verde",
+    "yuca": "Yuca / Mandioca",
+    "huevo": "Huevo campero",
+    "queso_parmesano": "Queso parmesano",
+    "queso_mozzarella": "Queso mozzarella",
+    "queso_crema": "Queso crema",
+    "tomate_triturado": "Tomate natural triturado",
+    "pan_rallado": "Pan rallado / Panko",
+    "harina_almendra": "Harina de almendra",
+    "harina_trigo": "Harina de trigo",
+    "avena_copos": "Copos de avena",
+    "manzana": "Manzana reineta / Fuji",
+    "chocolate_negro": "Chocolate negro 70%",
+    "aceite_oliva": "Aceite de oliva virgen extra",
+    "pimenton_dulce": "Pimentón dulce de la Vera",
+    "ajo_polvo": "Ajo en polvo",
+    "cebolla": "Cebolla",
+    "limon": "Limón",
+    "miel": "Miel cruda",
+    "salsa_soja": "Salsa de soja",
+    "aguacate": "Aguacate / Palta",
+    "cerdo_solomillo": "Solomillo de cerdo",
+    "langostinos": "Langostinos / Camarones"
+  },
+  "ingredientSynonyms": {
+    "patata": [
+      "patata",
+      "patatas",
+      "papa",
+      "papas"
+    ],
+    "boniato": [
+      "boniato",
+      "batata",
+      "camote"
+    ],
+    "calabacin": [
+      "calabacin",
+      "calabacín",
+      "zucchini",
+      "zapallito"
+    ],
+    "platano_macho": [
+      "platano macho",
+      "plátano macho",
+      "platano verde",
+      "patacon",
+      "tostones"
+    ],
+    "yuca": [
+      "yuca",
+      "mandioca",
+      "casabe"
+    ],
+    "aguacate": [
+      "aguacate",
+      "palta"
+    ],
+    "langostinos": [
+      "langostinos",
+      "gambas",
+      "camarones"
+    ],
+    "pimiento_rojo": [
+      "pimiento",
+      "pimenton",
+      "morron",
+      "locote",
+      "aji dulce"
+    ],
+    "garbanzos_cocidos": [
+      "garbanzos",
+      "garbanzo"
+    ],
+    "pollo_pechuga": [
+      "pechuga de pollo",
+      "pollo",
+      "filete de pollo"
+    ],
+    "pollo_alitas": [
+      "alitas",
+      "alitas de pollo"
+    ],
+    "pollo_muslos": [
+      "muslos de pollo",
+      "contramuslos",
+      "trutro"
+    ]
+  },
+  "items": [
+    {
+      "id": "es_af_00001",
+      "shardId": "shard-01",
+      "slug": "pollo-parmesana-crujiente-freidora-aire",
+      "title": "Pechugas de Pollo a la Parmesana Crujientes",
+      "originRegion": "ES",
+      "baseTempC": 180,
+      "foodPhysicsClass": "lean_protein_with_topping",
+      "kcalPerServing": 310,
+      "nutriscoreEst": "A",
+      "searchIndex": {
+        "prepMin": 10,
+        "cookMin": 15,
+        "totalMin": 25,
+        "difficulty": 1,
+        "servings": 4,
+        "mealCategory": "principal",
+        "dietTags": [
+          "alto_en_proteina",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "pollo_pechuga",
+          "tomate_triturado",
+          "queso_parmesano",
+          "aceite_oliva"
+        ],
+        "ingCount": 6,
+        "stepCount": 3
+      }
+    },
+    {
+      "id": "es_af_00002",
+      "shardId": "shard-01",
+      "slug": "patatas-gajo-especiadas-extra-crujientes",
+      "title": "Patatas Gajo Especiadas Extra Crujientes (Deluxe)",
+      "originRegion": "ES",
+      "baseTempC": 200,
+      "foodPhysicsClass": "root_vegetables_bastons",
+      "kcalPerServing": 215,
+      "nutriscoreEst": "A",
+      "searchIndex": {
+        "prepMin": 12,
+        "cookMin": 22,
+        "totalMin": 34,
+        "difficulty": 1,
+        "servings": 3,
+        "mealCategory": "guarnicion",
+        "dietTags": [
+          "vegano",
+          "vegetariano",
+          "sin_gluten",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "patata",
+          "aceite_oliva",
+          "pimenton_dulce",
+          "ajo_polvo"
+        ],
+        "ingCount": 5,
+        "stepCount": 3
+      }
+    },
+    {
+      "id": "es_af_00003",
+      "shardId": "shard-01",
+      "slug": "salmon-glaseado-soja-miel-limon",
+      "title": "Lomos de Salmón Jugosos con Glaseado de Soja y Miel",
+      "originRegion": "ES",
+      "baseTempC": 195,
+      "foodPhysicsClass": "fatty_protein",
+      "kcalPerServing": 410,
+      "nutriscoreEst": "A",
+      "searchIndex": {
+        "prepMin": 8,
+        "cookMin": 9,
+        "totalMin": 17,
+        "difficulty": 1,
+        "servings": 2,
+        "mealCategory": "principal",
+        "dietTags": [
+          "alto_en_proteina",
+          "bajo_en_carbohidratos",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "salmon_lomo",
+          "salsa_soja",
+          "miel",
+          "limon"
+        ],
+        "ingCount": 5,
+        "stepCount": 3
+      }
+    },
+    {
+      "id": "es_af_00004",
+      "shardId": "shard-01",
+      "slug": "alitas-pollo-adobo-crujientes-sin-aceite",
+      "title": "Alitas de Pollo Adobadas Ultra Crujientes",
+      "originRegion": "ES",
+      "baseTempC": 200,
+      "foodPhysicsClass": "fatty_protein",
+      "kcalPerServing": 385,
+      "nutriscoreEst": "B",
+      "searchIndex": {
+        "prepMin": 10,
+        "cookMin": 20,
+        "totalMin": 30,
+        "difficulty": 1,
+        "servings": 3,
+        "mealCategory": "aperitivo",
+        "dietTags": [
+          "alto_en_proteina",
+          "bajo_en_carbohidratos",
+          "keto",
+          "sin_gluten",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "pollo_alitas",
+          "pimenton_dulce",
+          "ajo_polvo",
+          "aceite_oliva"
+        ],
+        "ingCount": 5,
+        "stepCount": 3
+      }
+    },
+    {
+      "id": "es_af_00005",
+      "shardId": "shard-01",
+      "slug": "tarta-queso-vasca-cremosa-freidora-aire",
+      "title": "Tarta de Queso Vasca Cremosa (La Viña) en Molde",
+      "originRegion": "ES",
+      "baseTempC": 175,
+      "foodPhysicsClass": "bakery_pastry_dough",
+      "kcalPerServing": 295,
+      "nutriscoreEst": "C",
+      "searchIndex": {
+        "prepMin": 10,
+        "cookMin": 22,
+        "totalMin": 32,
+        "difficulty": 2,
+        "servings": 6,
+        "mealCategory": "reposteria",
+        "dietTags": [
+          "vegetariano",
+          "sin_gluten"
+        ],
+        "mainIngIds": [
+          "queso_crema",
+          "huevo",
+          "harina_almendra"
+        ],
+        "ingCount": 5,
+        "stepCount": 3
+      }
+    },
+    {
+      "id": "es_af_00006",
+      "shardId": "shard-01",
+      "slug": "patacones-tostones-platano-macho-crujientes",
+      "title": "Patacones / Tostones de Plátano Macho en Doble Cocción",
+      "originRegion": "EC",
+      "baseTempC": 190,
+      "foodPhysicsClass": "root_vegetables_bastons",
+      "kcalPerServing": 230,
+      "nutriscoreEst": "A",
+      "searchIndex": {
+        "prepMin": 10,
+        "cookMin": 16,
+        "totalMin": 26,
+        "difficulty": 1,
+        "servings": 3,
+        "mealCategory": "aperitivo",
+        "dietTags": [
+          "vegano",
+          "vegetariano",
+          "sin_gluten",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "platano_macho",
+          "aceite_oliva",
+          "ajo_polvo",
+          "aguacate"
+        ],
+        "ingCount": 4,
+        "stepCount": 3
+      }
+    },
+    {
+      "id": "es_af_00007",
+      "shardId": "shard-02",
+      "slug": "garbanzos-especiados-snack-crujiente",
+      "title": "Snack de Garbanzos Tostados al Pimentón y Limón",
+      "originRegion": "ES",
+      "baseTempC": 195,
+      "foodPhysicsClass": "tender_vegetables",
+      "kcalPerServing": 165,
+      "nutriscoreEst": "A",
+      "searchIndex": {
+        "prepMin": 5,
+        "cookMin": 14,
+        "totalMin": 19,
+        "difficulty": 1,
+        "servings": 4,
+        "mealCategory": "snack",
+        "dietTags": [
+          "vegano",
+          "vegetariano",
+          "alto_en_proteina",
+          "sin_gluten",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "garbanzos_cocidos",
+          "pimenton_dulce",
+          "ajo_polvo",
+          "aceite_oliva",
+          "limon"
+        ],
+        "ingCount": 5,
+        "stepCount": 3
+      }
+    },
+    {
+      "id": "es_af_00008",
+      "shardId": "shard-02",
+      "slug": "bastones-boniato-camote-crujientes-parmesano",
+      "title": "Bastones de Boniato / Camote Asados al Parmesano",
+      "originRegion": "ES",
+      "baseTempC": 195,
+      "foodPhysicsClass": "root_vegetables_bastons",
+      "kcalPerServing": 225,
+      "nutriscoreEst": "A",
+      "searchIndex": {
+        "prepMin": 10,
+        "cookMin": 18,
+        "totalMin": 28,
+        "difficulty": 1,
+        "servings": 3,
+        "mealCategory": "guarnicion",
+        "dietTags": [
+          "vegetariano",
+          "sin_gluten",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "boniato",
+          "queso_parmesano",
+          "aceite_oliva",
+          "ajo_polvo"
+        ],
+        "ingCount": 4,
+        "stepCount": 3
+      }
+    },
+    {
+      "id": "es_af_00009",
+      "shardId": "shard-02",
+      "slug": "chips-calabacin-crujientes-parmesano-panko",
+      "title": "Medallones de Calabacín / Zucchini Crujientes al Panko",
+      "originRegion": "ES",
+      "baseTempC": 200,
+      "foodPhysicsClass": "battered_or_breaded",
+      "kcalPerServing": 210,
+      "nutriscoreEst": "A",
+      "searchIndex": {
+        "prepMin": 10,
+        "cookMin": 11,
+        "totalMin": 21,
+        "difficulty": 1,
+        "servings": 2,
+        "mealCategory": "aperitivo",
+        "dietTags": [
+          "vegetariano",
+          "bajo_en_carbohidratos"
+        ],
+        "mainIngIds": [
+          "calabacin",
+          "huevo",
+          "pan_rallado",
+          "queso_parmesano",
+          "aceite_oliva"
+        ],
+        "ingCount": 5,
+        "stepCount": 3
+      }
+    },
+    {
+      "id": "es_af_00010",
+      "shardId": "shard-02",
+      "slug": "langostinos-ajillo-limon-express",
+      "title": "Langostinos / Camarones al Ajillo y Limón Express",
+      "originRegion": "ES",
+      "baseTempC": 195,
+      "foodPhysicsClass": "lean_protein",
+      "kcalPerServing": 220,
+      "nutriscoreEst": "A",
+      "searchIndex": {
+        "prepMin": 6,
+        "cookMin": 7,
+        "totalMin": 13,
+        "difficulty": 1,
+        "servings": 2,
+        "mealCategory": "aperitivo",
+        "dietTags": [
+          "alto_en_proteina",
+          "bajo_en_carbohidratos",
+          "keto",
+          "sin_gluten",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "langostinos",
+          "aceite_oliva",
+          "ajo_polvo",
+          "pimenton_dulce",
+          "limon"
+        ],
+        "ingCount": 5,
+        "stepCount": 2
+      }
+    },
+    {
+      "id": "es_af_00011",
+      "shardId": "shard-02",
+      "slug": "solomillo-cerdo-mostaza-miel-jugoso",
+      "title": "Solomillo de Cerdo Asado con Costra de Miel y Ajo",
+      "originRegion": "ES",
+      "baseTempC": 190,
+      "foodPhysicsClass": "lean_protein_with_topping",
+      "kcalPerServing": 285,
+      "nutriscoreEst": "A",
+      "searchIndex": {
+        "prepMin": 8,
+        "cookMin": 18,
+        "totalMin": 26,
+        "difficulty": 1,
+        "servings": 3,
+        "mealCategory": "principal",
+        "dietTags": [
+          "alto_en_proteina",
+          "sin_gluten",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "cerdo_solomillo",
+          "miel",
+          "ajo_polvo",
+          "aceite_oliva"
+        ],
+        "ingCount": 4,
+        "stepCount": 3
+      }
+    },
+    {
+      "id": "es_af_00012",
+      "shardId": "shard-02",
+      "slug": "manzanas-asadas-canela-avena-crujiente",
+      "title": "Manzanas Asadas Rellenas de Crumble de Avena y Miel",
+      "originRegion": "ES",
+      "baseTempC": 175,
+      "foodPhysicsClass": "bakery_pastry_dough",
+      "kcalPerServing": 245,
+      "nutriscoreEst": "A",
+      "searchIndex": {
+        "prepMin": 8,
+        "cookMin": 16,
+        "totalMin": 24,
+        "difficulty": 1,
+        "servings": 2,
+        "mealCategory": "reposteria",
+        "dietTags": [
+          "vegetariano",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "manzana",
+          "avena_copos",
+          "harina_almendra",
+          "miel"
+        ],
+        "ingCount": 4,
+        "stepCount": 2
+      }
+    }
+  ]
+}

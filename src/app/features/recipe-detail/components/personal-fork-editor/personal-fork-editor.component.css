@@ -1,0 +1,71 @@
+:host {
+  display: block;
+}
+
+.fork-card {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fork-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.fork-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.fork-card__title {
+  margin: 0;
+  font-size: var(--pwa-text-base);
+  font-weight: 800;
+}
+
+.fork-card__subtitle {
+  margin: 0.25rem 0 0 0;
+  font-size: var(--pwa-text-xs);
+  color: var(--pwa-text-secondary);
+}
+
+.fork-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.star-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.25rem;
+  color: var(--pwa-text-muted);
+  cursor: pointer;
+  padding: 0 0.15rem;
+}
+
+.star-btn--active {
+  color: var(--pwa-warning);
+}
+
+.fork-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+

@@ -1,0 +1,67 @@
+<section class="pwa-card filter-panel" aria-label="Filtros del catálogo de recetas">
+  <div class="filter-panel__top">
+    <div class="search-box">
+      <input
+        type="search"
+        class="pwa-input search-box__input"
+        [value]="catalogStore.searchQuery()"
+        (input)="onSearchInput($event)"
+        placeholder="Buscar receta o ingrediente (ej. pollo, patata/papa, boniato/camote, salmón...)"
+        aria-label="Buscar receta o ingrediente"
+      />
+    </div>
+
+    <div class="time-and-fav">
+      @for (preset of timePresets; track preset.label) {
+        <button
+          type="button"
+          class="pwa-btn pwa-btn--sm"
+          [class.pwa-btn--primary]="catalogStore.maxTotalMinutes() === preset.maxMin"
+          [class.pwa-btn--secondary]="catalogStore.maxTotalMinutes() !== preset.maxMin"
+          (click)="catalogStore.maxTotalMinutes.set(preset.maxMin)"
+        >
+          {{ preset.label }}
+        </button>
+      }
+
+      <button
+        type="button"
+        class="pwa-btn pwa-btn--sm"
+        [class.pwa-btn--primary]="catalogStore.onlyFavorites()"
+        [class.pwa-btn--secondary]="!catalogStore.onlyFavorites()"
+        (click)="catalogStore.onlyFavorites.set(!catalogStore.onlyFavorites())"
+      >
+        ★ Favoritos ({{ forkStore.favoriteCount() }})
+      </button>
+    </div>
+  </div>
+
+  <div class="filter-row">
+    <div class="chip-list" role="tablist" aria-label="Categoría de plato">
+      @for (cat of categories; track cat.id) {
+        <button
+          type="button"
+          class="filter-chip"
+          [class.filter-chip--active]="catalogStore.selectedCategory() === cat.id"
+          (click)="catalogStore.selectedCategory.set(cat.id)"
+        >
+          {{ cat.label }}
+        </button>
+      }
+    </div>
+
+    <div class="chip-list" aria-label="Etiquetas nutricionales">
+      @for (diet of dietPills; track diet.id) {
+        <button
+          type="button"
+          class="filter-chip filter-chip--diet"
+          [class.filter-chip--active]="catalogStore.selectedDietTags().includes(diet.id)"
+          (click)="catalogStore.toggleDietTagFilter(diet.id)"
+        >
+          {{ diet.label }}
+        </button>
+      }
+    </div>
+  </div>
+</section>
+

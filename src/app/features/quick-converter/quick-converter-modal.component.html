@@ -1,0 +1,82 @@
+@let res = conversionResult();
+@let hw = hardwareStore.profile();
+
+<pwa-modal
+  [isOpen]="isOpen()"
+  title="⚡ Conversor Horno / Bolsa Congelado → Mi Air Fryer"
+  [subtitle]="'Ajustado en tiempo real a: ' + hw.modelAlias"
+  maxWidth="36rem"
+  (close)="close.emit()"
+>
+  <div class="converter-body">
+    <div class="mode-grid">
+      @for (m of modes; track m.id) {
+        <button
+          type="button"
+          class="pwa-card mode-card"
+          [class.mode-card--active]="sourceMode() === m.id"
+          (click)="sourceMode.set(m.id)"
+        >
+          <strong>{{ m.title }}</strong>
+          <span>{{ m.desc }}</span>
+        </button>
+      }
+    </div>
+
+    <pwa-numeric-slider
+      label="Temperatura que indica la receta o envase"
+      [value]="sourceTempC()"
+      [min]="140"
+      [max]="250"
+      [step]="5"
+      unit="°C"
+      (valueChange)="sourceTempC.set($event)"
+    />
+
+    <pwa-numeric-slider
+      label="Tiempo que indica la receta o envase"
+      [value]="sourceTimeMin()"
+      [min]="4"
+      [max]="75"
+      [step]="1"
+      unit="min"
+      (valueChange)="sourceTimeMin.set($event)"
+    />
+
+    <div class="pwa-card result-box">
+      <div class="result-box__header">
+        <pwa-badge variant="success">Resultado para tu freidora</pwa-badge>
+        @if (res.preheatMin > 0) {
+          <span class="preheat-note">Precalentar {{ res.preheatMin }} min</span>
+        }
+      </div>
+
+      <div class="result-box__metrics">
+        <div class="metric-item">
+          <span class="metric-item__label">Temperatura</span>
+          <strong class="metric-item__value">
+            {{ res.effectiveTempC | temperatureUnit: hw.preferredTempUnit }}
+          </strong>
+        </div>
+        <div class="metric-item">
+          <span class="metric-item__label">Tiempo Total</span>
+          <strong class="metric-item__value">{{ res.effectiveCookMin }} min</strong>
+        </div>
+        <div class="metric-item">
+          <span class="metric-item__label">Agitar / Voltear</span>
+          <strong class="metric-item__value">Min {{ res.shakeMinuteMark }}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div modal-footer>
+    <button type="button" class="pwa-btn pwa-btn--secondary" (click)="close.emit()">
+      Cerrar
+    </button>
+    <button type="button" class="pwa-btn pwa-btn--primary" (click)="onStartConvertedTimer()">
+      ⏱ Iniciar Temporizador ({{ res.effectiveCookMin }} min)
+    </button>
+  </div>
+</pwa-modal>
+

@@ -1,0 +1,110 @@
+:host {
+  display: contents;
+}
+
+.timer-pill-wrapper {
+  position: fixed;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(94vw, 40rem);
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timer-alert-banner {
+  background-color: var(--pwa-warning-soft);
+  border-color: var(--pwa-warning);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  box-shadow: var(--pwa-shadow-xl);
+}
+
+.timer-alert-banner__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: var(--pwa-text-xs);
+  color: var(--pwa-text-primary);
+}
+
+.timer-pill {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: var(--pwa-shadow-xl);
+  border-color: var(--pwa-brand-500);
+}
+
+.timer-pill--finished {
+  border-color: var(--pwa-success);
+  background-color: var(--pwa-success-soft);
+}
+
+.timer-pill__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.timer-pill__top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.timer-pill__title {
+  font-size: var(--pwa-text-sm);
+  font-weight: 700;
+  color: var(--pwa-text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 15rem;
+}
+
+.wake-lock-dot {
+  font-size: var(--pwa-text-2xs);
+  color: var(--pwa-success-text);
+  font-weight: 600;
+}
+
+.timer-pill__progress-bar {
+  height: 0.35rem;
+  background-color: var(--pwa-bg-subtle);
+  border-radius: var(--pwa-radius-full);
+  overflow: hidden;
+}
+
+.timer-pill__progress-fill {
+  height: 100%;
+  background-color: var(--pwa-brand-500);
+  transition: width 0.3s linear;
+}
+
+.timer-pill__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.timer-pill__clock {
+  font-family: var(--pwa-font-mono);
+  font-size: var(--pwa-text-lg);
+  font-weight: 800;
+  color: var(--pwa-brand-text);
+  font-feature-settings: var(--pwa-font-features);
+}
+

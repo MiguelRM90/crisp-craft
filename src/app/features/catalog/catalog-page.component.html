@@ -1,0 +1,57 @@
+@let recipes = catalogStore.filteredRecipes();
+@let manifest = catalogStore.manifest();
+@let hw = hardwareStore.profile();
+@let forks = forkStore.forksById();
+
+<div class="catalog-page">
+  <app-hardware-quick-bar (openFullModal)="requestHardwareModal.emit()" />
+
+  <app-catalog-filter-bar />
+
+  <app-ingredient-pantry-picker />
+
+  <div class="catalog-summary">
+    <span>
+      Mostrando <strong>{{ recipes.length }}</strong> de
+      <strong>{{ manifest?.totalRecipes ?? 0 }}</strong> recetas verificadas · Tiempos compensados
+      para <strong>{{ hw.modelAlias }}</strong>
+    </span>
+  </div>
+
+  @if (catalogStore.isLoading() && recipes.length === 0) {
+    <div class="pwa-grid-2">
+      @for (skeleton of [1, 2, 3, 4]; track skeleton) {
+        <div class="pwa-card skeleton-card" aria-hidden="true"></div>
+      }
+    </div>
+  } @else {
+    <div class="pwa-grid-2 catalog-grid">
+      @for (item of recipes; track item.id) {
+        @defer (on viewport) {
+          <app-recipe-index-card
+            [item]="item"
+            [hardware]="hw"
+            [fork]="forks[item.id] ?? null"
+            [canonicalIngredients]="manifest?.canonicalIngredients ?? {}"
+            (toggleFavorite)="forkStore.toggleFavorite($event)"
+          />
+        } @placeholder {
+          <div class="pwa-card skeleton-card" aria-hidden="true"></div>
+        }
+      } @empty {
+        <div class="pwa-card empty-state">
+          <h3>No se encontraron recetas con esos filtros</h3>
+          <p>Prueba a quitar algún ingrediente o ampliar el tiempo máximo de cocción.</p>
+          <button
+            type="button"
+            class="pwa-btn pwa-btn--primary pwa-btn--sm"
+            (click)="catalogStore.resetFilters()"
+          >
+            Restablecer todos los filtros
+          </button>
+        </div>
+      }
+    </div>
+  }
+</div>
+

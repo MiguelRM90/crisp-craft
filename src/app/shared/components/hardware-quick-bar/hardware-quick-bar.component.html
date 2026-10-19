@@ -1,0 +1,56 @@
+@let hw = hardwareStore.profile();
+
+<section class="quick-bar pwa-card pwa-card--subtle" aria-label="Compensador activo de tu freidora">
+  <div class="quick-bar__group">
+    <span class="quick-bar__label">Cesta:</span>
+    <div class="quick-bar__segmented" role="group" aria-label="Capacidad de cesta">
+      @for (opt of capacityOptions; track opt.value) {
+        <button
+          type="button"
+          class="seg-btn"
+          [class.seg-btn--active]="hw.basketCapacity === opt.value"
+          (click)="onSelectCapacity(opt.value)"
+        >
+          {{ opt.shortLabel }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <div class="quick-bar__group">
+    <button
+      type="button"
+      class="pwa-btn pwa-btn--sm chip-toggle"
+      [class.chip-toggle--active]="hw.hasDualHeatingElement"
+      (click)="onToggleDualElement()"
+      title="Activar si tu freidora tiene resistencia superior e inferior (ej. Dual Blaze)"
+    >
+      🔥 Doble resistencia: {{ hw.hasDualHeatingElement ? 'SÍ' : 'NO' }}
+    </button>
+  </div>
+
+  <div class="quick-bar__group quick-bar__group--grow">
+    <label for="quick-accessory-select" class="quick-bar__label">Accesorio:</label>
+    <select
+      id="quick-accessory-select"
+      class="pwa-select quick-bar__select"
+      [value]="hw.defaultAccessory"
+      (change)="onAccessoryChange($event)"
+    >
+      @for (acc of accessoryOptions; track acc.value) {
+        <option [value]="acc.value" [selected]="hw.defaultAccessory === acc.value">
+          {{ acc.label }}
+        </option>
+      }
+    </select>
+  </div>
+
+  <button
+    type="button"
+    class="pwa-btn pwa-btn--ghost pwa-btn--sm"
+    (click)="openFullModal.emit()"
+  >
+    Ajuste fino ({{ hw.nominalPowerWatts }}W · {{ hw.preferredTempUnit === 'C' ? '°C' : '°F' }})
+  </button>
+</section>
+

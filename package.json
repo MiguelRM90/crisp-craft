@@ -1,0 +1,36 @@
+{
+  "name": "crisp-craft",
+  "version": "1.0.0",
+  "description": "Local-First Air Fryer Recipe & Thermodynamic Cooking Compensator PWA",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:gh-pages": "ng build --configuration production --base-href /crisp-craft/",
+    "watch": "ng build --watch --configuration development",
+    "etl:build": "node --experimental-strip-types tools/etl/build-shards.ts",
+    "test": "node --experimental-strip-types --test src/**/*.spec.ts"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^22.2.0",
+    "@angular/compiler": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "@angular/forms": "^22.2.0",
+    "@angular/platform-browser": "^22.2.0",
+    "@angular/router": "^22.2.0",
+    "@angular/service-worker": "^22.2.0",
+    "idb": "^8.0.0",
+    "pwa-ui-core": "file:../pwa-ui-core",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.2.0",
+    "@angular/cli": "^22.2.0",
+    "@angular/compiler-cli": "^22.2.0",
+    "@types/node": "^22.0.0",
+    "typescript": "~6.0.2"
+  }
+}
+

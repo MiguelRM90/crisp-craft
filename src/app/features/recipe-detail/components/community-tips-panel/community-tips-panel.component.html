@@ -1,0 +1,71 @@
+@let doc = bundle();
+
+<section class="pwa-card tips-panel">
+  <div class="tips-panel__header">
+    <div>
+      <h3 class="tips-panel__title">💬 Consejos Comunitarios (Firestore Spark Bundle)</h3>
+      <p class="tips-panel__subtitle">
+        1 sola lectura agrupada con caché local de 7 días en IndexedDB para consumo cero de cuota.
+      </p>
+    </div>
+    <pwa-badge variant="info">{{ doc?.totalTipsCount ?? 0 }} tips</pwa-badge>
+  </div>
+
+  @if (doc) {
+    <div class="tips-list">
+      @for (tip of doc.topTips; track tip.tipId) {
+        <article class="tip-card">
+          <div class="tip-card__meta">
+            <strong>{{ tip.authorAlias }}</strong>
+            <span>{{ capacityLabels[tip.basketCapacity] }}</span>
+            @if (tip.hasDualHeatingElement) {
+              <pwa-badge variant="success">Doble resistencia</pwa-badge>
+            }
+            @if (tip.suggestedTimeDeltaMin !== 0) {
+              <pwa-badge variant="warning">
+                {{ tip.suggestedTimeDeltaMin > 0 ? '+' : '' }}{{ tip.suggestedTimeDeltaMin }} min
+              </pwa-badge>
+            }
+          </div>
+          <p class="tip-card__comment">{{ tip.comment }}</p>
+        </article>
+      }
+    </div>
+  }
+
+  <div class="tip-form">
+    <span class="pwa-label">Añadir consejo con tu configuración actual (máx. 280 caracteres)</span>
+    <div class="pwa-grid-2">
+      <input
+        type="text"
+        class="pwa-input"
+        [value]="authorAlias()"
+        (input)="onAliasInput($event)"
+        placeholder="Tu alias o modelo (ej. Ana - Cosori 5.5L)"
+      />
+      <select class="pwa-select" [value]="suggestedTimeDeltaMin()" (change)="onDeltaTimeChange($event)">
+        <option [value]="0">Tiempo exacto (0 min)</option>
+        <option [value]="-3">−3 min respecto al base</option>
+        <option [value]="-2">−2 min respecto al base</option>
+        <option [value]="-1">−1 min respecto al base</option>
+        <option [value]="1">+1 min respecto al base</option>
+        <option [value]="2">+2 min respecto al base</option>
+        <option [value]="3">+3 min respecto al base</option>
+      </select>
+    </div>
+    <textarea
+      rows="2"
+      maxlength="280"
+      class="pwa-textarea"
+      [value]="comment()"
+      (input)="onCommentInput($event)"
+      placeholder="Comparte cómo te quedó o algún truco para esta receta..."
+    ></textarea>
+    <div>
+      <button type="button" class="pwa-btn pwa-btn--secondary pwa-btn--sm" (click)="onSubmitTip()">
+        Enviar consejo verificado
+      </button>
+    </div>
+  </div>
+</section>
+

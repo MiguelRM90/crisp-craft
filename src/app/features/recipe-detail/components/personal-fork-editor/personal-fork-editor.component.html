@@ -1,0 +1,114 @@
+@let fk = fork();
+@let comp = compensation();
+
+<section class="pwa-card fork-card">
+  <div class="fork-card__header">
+    <div>
+      <div class="fork-card__title-row">
+        <h3 class="fork-card__title">📌 Modo "Personal Fork" (Ajuste y Notas en Local)</h3>
+        @if (comp.isOverriddenByPersonalFork) {
+          <pwa-badge variant="warning">Override Activo</pwa-badge>
+        } @else {
+          <pwa-badge variant="info">Guardado en IndexedDB</pwa-badge>
+        }
+      </div>
+      <p class="fork-card__subtitle">
+        Personaliza el tiempo o temperatura para tu unidad concreta y guarda tus apuntes (ej. "se
+        me quema a los 12 min si pongo papel").
+      </p>
+    </div>
+
+    <button
+      type="button"
+      class="pwa-btn pwa-btn--sm"
+      [class.pwa-btn--primary]="fk?.isFavorite"
+      [class.pwa-btn--secondary]="!fk?.isFavorite"
+      (click)="forkStore.toggleFavorite(recipeId())"
+    >
+      {{ fk?.isFavorite ? '★ En tus Favoritos' : '☆ Guardar en Favoritos' }}
+    </button>
+  </div>
+
+  <div class="pwa-grid-2">
+    <div class="pwa-input-group">
+      <label class="pwa-label" for="fork-cook-min">
+        Fijar tiempo personal (min) — Vacío = Auto ({{ comp.effectiveCookMin }} min)
+      </label>
+      <input
+        id="fork-cook-min"
+        type="number"
+        min="1"
+        max="90"
+        class="pwa-input"
+        [value]="customCookMin() ?? ''"
+        (input)="onCookMinInput($event)"
+        [placeholder]="'Auto: ' + comp.effectiveCookMin + ' min'"
+      />
+    </div>
+
+    <div class="pwa-input-group">
+      <label class="pwa-label" for="fork-temp-c">
+        Fijar temperatura personal (°C) — Vacío = Auto ({{ comp.effectiveTempC }} °C)
+      </label>
+      <input
+        id="fork-temp-c"
+        type="number"
+        min="120"
+        max="230"
+        step="5"
+        class="pwa-input"
+        [value]="customTempC() ?? ''"
+        (input)="onTempCInput($event)"
+        [placeholder]="'Auto: ' + comp.effectiveTempC + ' °C'"
+      />
+    </div>
+  </div>
+
+  <div class="pwa-input-group">
+    <label class="pwa-label" for="fork-notes-textarea">Tus notas privadas de cocción</label>
+    <textarea
+      id="fork-notes-textarea"
+      rows="2"
+      class="pwa-textarea"
+      [value]="notesText()"
+      (input)="onNotesInput($event)"
+      placeholder="Ej. En mi Cosori con molde de silicona queda perfecto a los 13 min sacudiendo dos veces..."
+    ></textarea>
+  </div>
+
+  <div class="fork-card__footer">
+    <div class="rating-row">
+      <span class="pwa-label">Tu valoración:</span>
+      @for (star of [1, 2, 3, 4, 5]; track star) {
+        <button
+          type="button"
+          class="star-btn"
+          [class.star-btn--active]="(rating() ?? 0) >= star"
+          (click)="rating.set(star === 1 ? 1 : star === 2 ? 2 : star === 3 ? 3 : star === 4 ? 4 : 5)"
+        >
+          ★
+        </button>
+      }
+    </div>
+
+    <div class="fork-card__actions">
+      @if (comp.isOverriddenByPersonalFork) {
+        <button
+          type="button"
+          class="pwa-btn pwa-btn--ghost pwa-btn--sm"
+          (click)="onResetOverrides()"
+        >
+          Restaurar cálculo termodinámico
+        </button>
+      }
+      <button
+        type="button"
+        class="pwa-btn pwa-btn--primary pwa-btn--sm"
+        (click)="onSavePersonalFork()"
+      >
+        💾 Guardar Personal Fork
+      </button>
+    </div>
+  </div>
+</section>
+

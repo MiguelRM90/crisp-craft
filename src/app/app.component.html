@@ -1,0 +1,21 @@
+<div class="app-shell">
+  <app-header
+    (openHardwareSettings)="openHardwareModal()"
+    (openQuickConverter)="openQuickConverter()" />
+
+  <main class="main-container">
+    <router-outlet />
+  </main>
+
+  <app-floating-timer-pill />
+
+  <app-hardware-settings-modal
+    [isOpen]="isHardwareModalOpen()"
+    (close)="closeHardwareModal()" />
+
+  <app-quick-converter-modal
+    [isOpen]="isQuickConverterOpen()"
+    (close)="closeQuickConverter()" />
+
+  <pwa-toast-container />
+</div>

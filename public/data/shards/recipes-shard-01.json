@@ -1,0 +1,817 @@
+{
+  "shardId": "shard-01",
+  "version": "1.0.0",
+  "recipes": {
+    "es_af_00001": {
+      "id": "es_af_00001",
+      "slug": "pollo-parmesana-crujiente-freidora-aire",
+      "title": "Pechugas de Pollo a la Parmesana Crujientes",
+      "lang": "es-ES",
+      "originRegion": "ES",
+      "sourceMeta": {
+        "adaptationType": "oven_converted_and_verified",
+        "license": "OpenRAIL",
+        "canonicalRef": "somosnlp/RecetasDeLaAbuela#4120"
+      },
+      "searchIndex": {
+        "prepMin": 10,
+        "cookMin": 15,
+        "totalMin": 25,
+        "difficulty": 1,
+        "servings": 4,
+        "mealCategory": "principal",
+        "dietTags": [
+          "alto_en_proteina",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "pollo_pechuga",
+          "tomate_triturado",
+          "queso_parmesano",
+          "aceite_oliva"
+        ],
+        "ingCount": 6,
+        "stepCount": 3
+      },
+      "afProfile": {
+        "baseTempC": 180,
+        "baseTempF": 355,
+        "preheatMin": 5,
+        "singleLayerRequired": true,
+        "oilSprayRequired": true,
+        "foodPhysicsClass": "lean_protein_with_topping",
+        "referenceLoadG": 800,
+        "hardwareMultipliers": {
+          "compact1000w3l": 1.15,
+          "standard1500w5l": 1,
+          "highPower2000w6l": 0.9
+        },
+        "massScalingCurve": [
+          {
+            "loadG": 400,
+            "timeFactor": 0.82
+          },
+          {
+            "loadG": 800,
+            "timeFactor": 1
+          },
+          {
+            "loadG": 1200,
+            "timeFactor": 1.25,
+            "batchWarning": true
+          }
+        ],
+        "actionTriggers": [
+          {
+            "type": "flip_and_spray",
+            "pctTrigger": 0.53,
+            "defaultMin": 8,
+            "label": "Dar la vuelta a las pechugas y pulverizar ligeramente con aceite."
+          },
+          {
+            "type": "add_topping",
+            "pctTrigger": 0.73,
+            "defaultMin": 11,
+            "label": "Repartir el tomate triturado y el queso parmesano para gratinar sin quemar."
+          }
+        ]
+      },
+      "ingredientGroups": [
+        {
+          "purpose": "Base de proteína",
+          "items": [
+            {
+              "id": "pollo_pechuga",
+              "name": "Filetes gruesos de pechuga de pollo",
+              "qty": 800,
+              "unit": "g"
+            },
+            {
+              "id": "aceite_oliva",
+              "name": "Aceite de oliva virgen extra (en spray)",
+              "qty": 15,
+              "unit": "ml"
+            },
+            {
+              "id": "ajo_polvo",
+              "name": "Ajo en polvo",
+              "qty": 4,
+              "unit": "g"
+            }
+          ]
+        },
+        {
+          "purpose": "Cobertura de gratinado",
+          "items": [
+            {
+              "id": "tomate_triturado",
+              "name": "Tomate natural triturado reducido",
+              "qty": 120,
+              "unit": "g"
+            },
+            {
+              "id": "queso_parmesano",
+              "name": "Queso parmesano rallado",
+              "qty": 60,
+              "unit": "g"
+            },
+            {
+              "id": "queso_mozzarella",
+              "name": "Mozzarella rallada seca",
+              "qty": 50,
+              "unit": "g"
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "text": "Precalentar la freidora de aire a 180 °C durante 5 minutos. Secar las pechugas con papel absorbente, sazonar con ajo en polvo y salpimentar.",
+          "timerSec": 300,
+          "isAirFryerActivePhase": false
+        },
+        {
+          "step": 2,
+          "text": "Disponer los filetes en capa única sin superponerlos. Cocinar a 180 °C durante 11 minutos, dándoles la vuelta a mitad de cocción.",
+          "timerSec": 660,
+          "isAirFryerActivePhase": true
+        },
+        {
+          "step": 3,
+          "text": "Abrir el cajón, cubrir cada pechuga con tomate triturado y los quesos, y cocinar los 4 minutos finales hasta fundir y dorar.",
+          "timerSec": 240,
+          "isAirFryerActivePhase": true
+        }
+      ],
+      "nutritionPerServing": {
+        "kcal": 310,
+        "proteinG": 46.5,
+        "fatG": 11.2,
+        "carbsG": 3.4,
+        "nutriscoreEst": "A",
+        "dataSource": "OFF_ODbL_USDA_CC0"
+      },
+      "shardId": "shard-01"
+    },
+    "es_af_00002": {
+      "id": "es_af_00002",
+      "slug": "patatas-gajo-especiadas-extra-crujientes",
+      "title": "Patatas Gajo Especiadas Extra Crujientes (Deluxe)",
+      "lang": "es-ES",
+      "originRegion": "ES",
+      "sourceMeta": {
+        "adaptationType": "native_air_fryer",
+        "license": "OpenRAIL",
+        "canonicalRef": "somosnlp/RecetasDeLaAbuela#1084"
+      },
+      "searchIndex": {
+        "prepMin": 12,
+        "cookMin": 22,
+        "totalMin": 34,
+        "difficulty": 1,
+        "servings": 3,
+        "mealCategory": "guarnicion",
+        "dietTags": [
+          "vegano",
+          "vegetariano",
+          "sin_gluten",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "patata",
+          "aceite_oliva",
+          "pimenton_dulce",
+          "ajo_polvo"
+        ],
+        "ingCount": 5,
+        "stepCount": 3
+      },
+      "afProfile": {
+        "baseTempC": 200,
+        "baseTempF": 390,
+        "preheatMin": 4,
+        "singleLayerRequired": false,
+        "oilSprayRequired": true,
+        "foodPhysicsClass": "root_vegetables_bastons",
+        "referenceLoadG": 600,
+        "hardwareMultipliers": {
+          "compact1000w3l": 1.18,
+          "standard1500w5l": 1,
+          "highPower2000w6l": 0.88
+        },
+        "massScalingCurve": [
+          {
+            "loadG": 300,
+            "timeFactor": 0.78
+          },
+          {
+            "loadG": 600,
+            "timeFactor": 1
+          },
+          {
+            "loadG": 1000,
+            "timeFactor": 1.28,
+            "batchWarning": true
+          }
+        ],
+        "actionTriggers": [
+          {
+            "type": "shake_basket",
+            "pctTrigger": 0.36,
+            "defaultMin": 8,
+            "label": "Sacudir enérgicamente el cajón para redistribuir los gajos de patata."
+          },
+          {
+            "type": "shake_basket",
+            "pctTrigger": 0.72,
+            "defaultMin": 16,
+            "label": "Segunda sacudida de cesta y pulverización ligera de aceite si se observan zonas secas."
+          }
+        ]
+      },
+      "ingredientGroups": [
+        {
+          "purpose": "Gajos y adobo seco",
+          "items": [
+            {
+              "id": "patata",
+              "name": "Patatas medianas de piel fina (lavadas)",
+              "qty": 600,
+              "unit": "g"
+            },
+            {
+              "id": "aceite_oliva",
+              "name": "Aceite de oliva virgen extra",
+              "qty": 15,
+              "unit": "ml"
+            },
+            {
+              "id": "pimenton_dulce",
+              "name": "Pimentón dulce de la Vera",
+              "qty": 5,
+              "unit": "g"
+            },
+            {
+              "id": "ajo_polvo",
+              "name": "Ajo en polvo",
+              "qty": 4,
+              "unit": "g"
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "text": "Cortar las patatas con piel en gajos simétricos y sumergirlos en agua fría durante 10 minutos para retirar el almidón superficial. Secar a conciencia con un paño limpio.",
+          "timerSec": 600,
+          "isAirFryerActivePhase": false
+        },
+        {
+          "step": 2,
+          "text": "Mezclar los gajos secos con el aceite de oliva, el pimentón y el ajo en polvo hasta impregnar toda la superficie."
+        },
+        {
+          "step": 3,
+          "text": "Cocinar en la cesta a 200 °C durante 22 minutos, sacudiendo enérgicamente en el minuto 8 y en el minuto 16 hasta lograr ampollas doradas y centro tierno.",
+          "timerSec": 1320,
+          "isAirFryerActivePhase": true
+        }
+      ],
+      "nutritionPerServing": {
+        "kcal": 215,
+        "proteinG": 4.1,
+        "fatG": 5.4,
+        "carbsG": 37.8,
+        "fiberG": 4.2,
+        "nutriscoreEst": "A",
+        "dataSource": "OFF_ODbL_USDA_CC0"
+      },
+      "shardId": "shard-01"
+    },
+    "es_af_00003": {
+      "id": "es_af_00003",
+      "slug": "salmon-glaseado-soja-miel-limon",
+      "title": "Lomos de Salmón Jugosos con Glaseado de Soja y Miel",
+      "lang": "es-ES",
+      "originRegion": "ES",
+      "sourceMeta": {
+        "adaptationType": "native_air_fryer",
+        "license": "Factual-TRLPI-Art10",
+        "canonicalRef": "factual-matrix/salmon-glazed-af"
+      },
+      "searchIndex": {
+        "prepMin": 8,
+        "cookMin": 9,
+        "totalMin": 17,
+        "difficulty": 1,
+        "servings": 2,
+        "mealCategory": "principal",
+        "dietTags": [
+          "alto_en_proteina",
+          "bajo_en_carbohidratos",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "salmon_lomo",
+          "salsa_soja",
+          "miel",
+          "limon"
+        ],
+        "ingCount": 5,
+        "stepCount": 3
+      },
+      "afProfile": {
+        "baseTempC": 195,
+        "baseTempF": 385,
+        "preheatMin": 3,
+        "singleLayerRequired": true,
+        "oilSprayRequired": false,
+        "foodPhysicsClass": "fatty_protein",
+        "referenceLoadG": 400,
+        "hardwareMultipliers": {
+          "compact1000w3l": 1.12,
+          "standard1500w5l": 1,
+          "highPower2000w6l": 0.88
+        },
+        "massScalingCurve": [
+          {
+            "loadG": 200,
+            "timeFactor": 0.88
+          },
+          {
+            "loadG": 400,
+            "timeFactor": 1
+          },
+          {
+            "loadG": 650,
+            "timeFactor": 1.15,
+            "batchWarning": true
+          }
+        ],
+        "actionTriggers": [
+          {
+            "type": "add_topping",
+            "pctTrigger": 0.67,
+            "defaultMin": 6,
+            "label": "Pincelar la superficie del salmón con el glaseado de miel y soja para caramelizar sin quemar los azúcares."
+          }
+        ]
+      },
+      "ingredientGroups": [
+        {
+          "purpose": "Pescado y glaseado",
+          "items": [
+            {
+              "id": "salmon_lomo",
+              "name": "Lomos de salmón fresco con piel (3 cm grosor)",
+              "qty": 400,
+              "unit": "g"
+            },
+            {
+              "id": "salsa_soja",
+              "name": "Salsa de soja baja en sal",
+              "qty": 20,
+              "unit": "ml"
+            },
+            {
+              "id": "miel",
+              "name": "Miel suave",
+              "qty": 15,
+              "unit": "g"
+            },
+            {
+              "id": "limon",
+              "name": "Zumo de limón fresco",
+              "qty": 10,
+              "unit": "ml"
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "text": "Emulsionar en un cuenco la salsa de soja, la miel y el zumo de limón. Secar los lomos de salmón con papel de cocina."
+        },
+        {
+          "step": 2,
+          "text": "Colocar el salmón con la piel hacia abajo en la cesta precalentada a 195 °C y cocinar durante 6 minutos sin voltear.",
+          "timerSec": 360,
+          "isAirFryerActivePhase": true
+        },
+        {
+          "step": 3,
+          "text": "Pincelar generosamente con el glaseado de miel y soja y cocinar los 3 minutos finales a 195 °C hasta que el exterior brille y el centro quede jugoso.",
+          "timerSec": 180,
+          "isAirFryerActivePhase": true
+        }
+      ],
+      "nutritionPerServing": {
+        "kcal": 410,
+        "proteinG": 41.2,
+        "fatG": 23.8,
+        "carbsG": 7.5,
+        "nutriscoreEst": "A",
+        "dataSource": "OFF_ODbL_USDA_CC0"
+      },
+      "shardId": "shard-01"
+    },
+    "es_af_00004": {
+      "id": "es_af_00004",
+      "slug": "alitas-pollo-adobo-crujientes-sin-aceite",
+      "title": "Alitas de Pollo Adobadas Ultra Crujientes",
+      "lang": "es-ES",
+      "originRegion": "ES",
+      "sourceMeta": {
+        "adaptationType": "deep_fry_converted",
+        "license": "OpenRAIL",
+        "canonicalRef": "somosnlp/RecetasDeLaAbuela#2391"
+      },
+      "searchIndex": {
+        "prepMin": 10,
+        "cookMin": 20,
+        "totalMin": 30,
+        "difficulty": 1,
+        "servings": 3,
+        "mealCategory": "aperitivo",
+        "dietTags": [
+          "alto_en_proteina",
+          "bajo_en_carbohidratos",
+          "keto",
+          "sin_gluten",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "pollo_alitas",
+          "pimenton_dulce",
+          "ajo_polvo",
+          "aceite_oliva"
+        ],
+        "ingCount": 5,
+        "stepCount": 3
+      },
+      "afProfile": {
+        "baseTempC": 200,
+        "baseTempF": 390,
+        "preheatMin": 4,
+        "singleLayerRequired": true,
+        "oilSprayRequired": false,
+        "foodPhysicsClass": "fatty_protein",
+        "referenceLoadG": 700,
+        "hardwareMultipliers": {
+          "compact1000w3l": 1.15,
+          "standard1500w5l": 1,
+          "highPower2000w6l": 0.9
+        },
+        "massScalingCurve": [
+          {
+            "loadG": 350,
+            "timeFactor": 0.85
+          },
+          {
+            "loadG": 700,
+            "timeFactor": 1
+          },
+          {
+            "loadG": 1100,
+            "timeFactor": 1.25,
+            "batchWarning": true
+          }
+        ],
+        "actionTriggers": [
+          {
+            "type": "flip_food",
+            "pctTrigger": 0.5,
+            "defaultMin": 10,
+            "label": "Voltear las alitas una a una para dorar la piel uniformemente por ambas caras."
+          },
+          {
+            "type": "shake_basket",
+            "pctTrigger": 0.8,
+            "defaultMin": 16,
+            "label": "Sacudir la cesta para exponer las puntas al flujo de aire final."
+          }
+        ]
+      },
+      "ingredientGroups": [
+        {
+          "purpose": "Alitas y especias",
+          "items": [
+            {
+              "id": "pollo_alitas",
+              "name": "Alitas de pollo partidas (jamoncitos y planos)",
+              "qty": 700,
+              "unit": "g"
+            },
+            {
+              "id": "pimenton_dulce",
+              "name": "Pimentón dulce ahumado",
+              "qty": 6,
+              "unit": "g"
+            },
+            {
+              "id": "ajo_polvo",
+              "name": "Ajo en polvo",
+              "qty": 5,
+              "unit": "g"
+            },
+            {
+              "id": "aceite_oliva",
+              "name": "Aceite de oliva virgen extra",
+              "qty": 5,
+              "unit": "ml",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "text": "Secar exhaustivamente las alitas con papel absorbente (clave para que la piel quede crujiente) y frotar con el pimentón, ajo en polvo y sal."
+        },
+        {
+          "step": 2,
+          "text": "Disponer en la cesta precalentada a 200 °C con la piel hacia abajo en capa única. Cocinar durante 10 minutos.",
+          "timerSec": 600,
+          "isAirFryerActivePhase": true
+        },
+        {
+          "step": 3,
+          "text": "Dar la vuelta a las alitas y cocinar 10 minutos más a 200 °C, sacudiendo en el minuto 16 hasta que la piel sufle y dore.",
+          "timerSec": 600,
+          "isAirFryerActivePhase": true
+        }
+      ],
+      "nutritionPerServing": {
+        "kcal": 385,
+        "proteinG": 34,
+        "fatG": 26.5,
+        "carbsG": 1.2,
+        "nutriscoreEst": "B",
+        "dataSource": "OFF_ODbL_USDA_CC0"
+      },
+      "shardId": "shard-01"
+    },
+    "es_af_00005": {
+      "id": "es_af_00005",
+      "slug": "tarta-queso-vasca-cremosa-freidora-aire",
+      "title": "Tarta de Queso Vasca Cremosa (La Viña) en Molde",
+      "lang": "es-ES",
+      "originRegion": "ES",
+      "sourceMeta": {
+        "adaptationType": "oven_converted_and_verified",
+        "license": "OpenRAIL",
+        "canonicalRef": "somosnlp/RecetasDeLaAbuela#6214"
+      },
+      "searchIndex": {
+        "prepMin": 10,
+        "cookMin": 22,
+        "totalMin": 32,
+        "difficulty": 2,
+        "servings": 6,
+        "mealCategory": "reposteria",
+        "dietTags": [
+          "vegetariano",
+          "sin_gluten"
+        ],
+        "mainIngIds": [
+          "queso_crema",
+          "huevo",
+          "harina_almendra"
+        ],
+        "ingCount": 5,
+        "stepCount": 3
+      },
+      "afProfile": {
+        "baseTempC": 175,
+        "baseTempF": 345,
+        "preheatMin": 4,
+        "singleLayerRequired": true,
+        "oilSprayRequired": false,
+        "foodPhysicsClass": "bakery_pastry_dough",
+        "referenceLoadG": 650,
+        "hardwareMultipliers": {
+          "compact1000w3l": 1.12,
+          "standard1500w5l": 1,
+          "highPower2000w6l": 0.92
+        },
+        "massScalingCurve": [
+          {
+            "loadG": 400,
+            "timeFactor": 0.85
+          },
+          {
+            "loadG": 650,
+            "timeFactor": 1
+          },
+          {
+            "loadG": 900,
+            "timeFactor": 1.18
+          }
+        ],
+        "actionTriggers": [
+          {
+            "type": "check_doneness",
+            "pctTrigger": 0.82,
+            "defaultMin": 18,
+            "label": "Comprobar que el centro tiemble como un flan y la superficie esté tostada."
+          }
+        ]
+      },
+      "ingredientGroups": [
+        {
+          "purpose": "Crema de queso",
+          "items": [
+            {
+              "id": "queso_crema",
+              "name": "Queso crema a temperatura ambiente",
+              "qty": 400,
+              "unit": "g"
+            },
+            {
+              "id": "huevo",
+              "name": "Huevos camperos talla L",
+              "qty": 3,
+              "unit": "ud"
+            },
+            {
+              "id": "harina_almendra",
+              "name": "Harina fina de almendra o maicena",
+              "qty": 15,
+              "unit": "g"
+            },
+            {
+              "id": "miel",
+              "name": "Azúcar o miel suave",
+              "qty": 90,
+              "unit": "g"
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "text": "Batir con varillas manuales el queso crema con el endulzante, incorporar los huevos uno a uno sin meter aire en exceso y añadir la harina tamizada."
+        },
+        {
+          "step": 2,
+          "text": "Volcar la mezcla en un molde de 15–18 cm forrado con papel de horno humedecido y arrugado. Cocinar a 175 °C durante 22 minutos.",
+          "timerSec": 1320,
+          "isAirFryerActivePhase": true
+        },
+        {
+          "step": 3,
+          "text": "Retirar con el centro aún tembloroso y dejar atemperar mínimo 2 horas antes de desmoldar para que asiente la textura cremosa."
+        }
+      ],
+      "nutritionPerServing": {
+        "kcal": 295,
+        "proteinG": 8.4,
+        "fatG": 22.1,
+        "carbsG": 15.6,
+        "nutriscoreEst": "C",
+        "dataSource": "OFF_ODbL_USDA_CC0"
+      },
+      "shardId": "shard-01"
+    },
+    "es_af_00006": {
+      "id": "es_af_00006",
+      "slug": "patacones-tostones-platano-macho-crujientes",
+      "title": "Patacones / Tostones de Plátano Macho en Doble Cocción",
+      "lang": "es-LATAM",
+      "originRegion": "EC",
+      "sourceMeta": {
+        "adaptationType": "deep_fry_converted",
+        "license": "OpenRAIL",
+        "canonicalRef": "pabloce/ecuador-recipes#0042"
+      },
+      "searchIndex": {
+        "prepMin": 10,
+        "cookMin": 16,
+        "totalMin": 26,
+        "difficulty": 1,
+        "servings": 3,
+        "mealCategory": "aperitivo",
+        "dietTags": [
+          "vegano",
+          "vegetariano",
+          "sin_gluten",
+          "sin_lactosa",
+          "sin_huevo"
+        ],
+        "mainIngIds": [
+          "platano_macho",
+          "aceite_oliva",
+          "ajo_polvo",
+          "aguacate"
+        ],
+        "ingCount": 4,
+        "stepCount": 3
+      },
+      "afProfile": {
+        "baseTempC": 190,
+        "baseTempF": 375,
+        "preheatMin": 3,
+        "singleLayerRequired": true,
+        "oilSprayRequired": true,
+        "foodPhysicsClass": "root_vegetables_bastons",
+        "referenceLoadG": 450,
+        "hardwareMultipliers": {
+          "compact1000w3l": 1.12,
+          "standard1500w5l": 1,
+          "highPower2000w6l": 0.9
+        },
+        "massScalingCurve": [
+          {
+            "loadG": 250,
+            "timeFactor": 0.85
+          },
+          {
+            "loadG": 450,
+            "timeFactor": 1
+          },
+          {
+            "loadG": 750,
+            "timeFactor": 1.22,
+            "batchWarning": true
+          }
+        ],
+        "actionTriggers": [
+          {
+            "type": "flip_and_spray",
+            "pctTrigger": 0.56,
+            "defaultMin": 9,
+            "label": "Extraer los cilindros tiernos, aplastarlos en caliente para formar el patacón, rociar aceite y reintroducir."
+          }
+        ]
+      },
+      "ingredientGroups": [
+        {
+          "purpose": "Patacones",
+          "items": [
+            {
+              "id": "platano_macho",
+              "name": "Plátanos machos verdes",
+              "qty": 450,
+              "unit": "g"
+            },
+            {
+              "id": "aceite_oliva",
+              "name": "Aceite en spray",
+              "qty": 15,
+              "unit": "ml"
+            },
+            {
+              "id": "ajo_polvo",
+              "name": "Sal de ajo",
+              "qty": 4,
+              "unit": "g"
+            },
+            {
+              "id": "aguacate",
+              "name": "Aguacate / Palta para acompañar",
+              "qty": 150,
+              "unit": "g",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "text": "Pelar los plátanos verdes, cortarlos en rodajas gruesas de 3 cm y pulverizar toda su superficie con aceite."
+        },
+        {
+          "step": 2,
+          "text": "Primera cocción (ablandado interior): Cocinar a 180 °C durante 9 minutos hasta que cedan al presionarlos.",
+          "timerSec": 540,
+          "isAirFryerActivePhase": true
+        },
+        {
+          "step": 3,
+          "text": "Aplastar cada rodaja con la base de un vaso, pulverizar aceite con sal de ajo y dorar a 200 °C durante 7 minutos adicionales hasta que crujan.",
+          "timerSec": 420,
+          "isAirFryerActivePhase": true
+        }
+      ],
+      "nutritionPerServing": {
+        "kcal": 230,
+        "proteinG": 2.1,
+        "fatG": 6.8,
+        "carbsG": 42,
+        "fiberG": 3.5,
+        "nutriscoreEst": "A",
+        "dataSource": "OFF_ODbL_USDA_CC0"
+      },
+      "shardId": "shard-01"
+    }
+  }
+}

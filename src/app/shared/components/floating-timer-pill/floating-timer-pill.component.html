@@ -1,0 +1,70 @@
+@let session = timer.session();
+@let alert = timer.activeAlertTrigger();
+@let hw = hardwareStore.profile();
+
+@if (session) {
+  <aside class="timer-pill-wrapper" aria-live="polite">
+    @if (alert) {
+      <div class="pwa-card timer-alert-banner">
+        <div class="timer-alert-banner__text">
+          <strong>🔔 ¡Acción en cesta!</strong>
+          <span>{{ alert.label }}</span>
+        </div>
+        <button
+          type="button"
+          class="pwa-btn pwa-btn--primary pwa-btn--sm"
+          (click)="timer.acknowledgeActiveAlert()"
+        >
+          Hecho ✓
+        </button>
+      </div>
+    }
+
+    <div class="pwa-card timer-pill" [class.timer-pill--finished]="timer.isFinished()">
+      <div class="timer-pill__info">
+        <div class="timer-pill__top">
+          @if (session.recipeSlug) {
+            <a [routerLink]="['/recipe', session.recipeSlug]" class="timer-pill__title">
+              {{ session.recipeTitle }}
+            </a>
+          } @else {
+            <span class="timer-pill__title">{{ session.recipeTitle }}</span>
+          }
+          <pwa-badge variant="info">
+            {{ session.targetTempC | temperatureUnit: hw.preferredTempUnit }}
+          </pwa-badge>
+          @if (timer.isWakeLockActive()) {
+            <span class="wake-lock-dot" title="Modo Cocina Activo: Pantalla encendida">🔆 Pantalla activa</span>
+          }
+        </div>
+        <div class="timer-pill__progress-bar">
+          <div class="timer-pill__progress-fill" [style.width.%]="timer.progressPct()"></div>
+        </div>
+      </div>
+
+      <div class="timer-pill__controls">
+        <span class="timer-pill__clock">{{ timer.remainingSeconds() | durationFormat }}</span>
+
+        @if (!timer.isFinished()) {
+          <button
+            type="button"
+            class="pwa-btn pwa-btn--secondary pwa-btn--sm"
+            (click)="onTogglePause()"
+          >
+            {{ session.isPaused ? '▶ Reanudar' : '⏸ Pausar' }}
+          </button>
+        }
+
+        <button
+          type="button"
+          class="pwa-btn pwa-btn--ghost pwa-btn--sm"
+          (click)="timer.stopAndClearTimer()"
+          title="Cancelar o cerrar temporizador"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+  </aside>
+}
+

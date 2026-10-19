@@ -1,0 +1,93 @@
+@let rec = recipe();
+@let comp = compensation();
+@let session = timer.session();
+
+<section class="pwa-card timer-box">
+  <div class="timer-box__header">
+    <div>
+      <h3 class="timer-box__title">⏱️ Temporizador Interactivo con Alertas de Cesta</h3>
+      <p class="timer-box__subtitle">
+        Mantiene la pantalla encendida (Wake Lock) y emite aviso sonoro/notificación web en el
+        minuto exacto de agitar o voltear.
+      </p>
+    </div>
+
+    @if (timer.isWakeLockActive()) {
+      <pwa-badge variant="success">🔆 Wake Lock Activo</pwa-badge>
+    }
+  </div>
+
+  @if (session && session.recipeSlug === rec.slug) {
+    <div class="active-timer-display">
+      <div class="active-timer-display__clock">
+        {{ timer.remainingSeconds() | durationFormat }}
+      </div>
+      <div class="active-timer-display__meta">
+        <span>Progreso: {{ timer.progressPct() }}%</span>
+        <span>Objetivo: {{ session.targetTempC }} °C</span>
+      </div>
+      <div class="active-timer-display__bar">
+        <div class="active-timer-display__fill" [style.width.%]="timer.progressPct()"></div>
+      </div>
+
+      @if (session.triggers.length > 0) {
+        <div class="session-triggers">
+          @for (t of session.triggers; track t.id) {
+            <div class="session-trigger-pill" [class.session-trigger-pill--done]="t.fired">
+              <span>{{ t.fired ? '✓' : '🔔' }} {{ t.triggerAtElapsedSec | durationFormat: 'human' }}:</span>
+              <span>{{ t.label }}</span>
+            </div>
+          }
+        </div>
+      }
+
+      <div class="active-timer-display__actions">
+        @if (session.isPaused) {
+          <button
+            type="button"
+            class="pwa-btn pwa-btn--primary pwa-btn--sm"
+            (click)="timer.resumeTimer()"
+          >
+            ▶ Reanudar
+          </button>
+        } @else {
+          <button
+            type="button"
+            class="pwa-btn pwa-btn--secondary pwa-btn--sm"
+            (click)="timer.pauseTimer()"
+          >
+            ⏸ Pausar
+          </button>
+        }
+        <button
+          type="button"
+          class="pwa-btn pwa-btn--danger pwa-btn--sm"
+          (click)="timer.stopAndClearTimer()"
+        >
+          ⏹ Detener
+        </button>
+      </div>
+    </div>
+  } @else {
+    <div class="start-options">
+      <button type="button" class="pwa-btn pwa-btn--primary" (click)="onStartFullCycle()">
+        ▶ Iniciar Ciclo Completo Compensado ({{ comp.effectiveCookMin }} min a {{ comp.effectiveTempC }} °C)
+      </button>
+
+      <div class="step-timers">
+        @for (s of comp.compensatedSteps; track s.step) {
+          @if (s.timerSec) {
+            <button
+              type="button"
+              class="pwa-btn pwa-btn--secondary pwa-btn--sm"
+              (click)="onStartStepPhase(s.step, s.timerSec)"
+            >
+              ⏱ Paso {{ s.step }} ({{ s.timerSec | durationFormat: 'human' }})
+            </button>
+          }
+        }
+      </div>
+    </div>
+  }
+</section>
+

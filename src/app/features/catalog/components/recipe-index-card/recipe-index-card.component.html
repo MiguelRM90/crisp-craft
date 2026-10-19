@@ -1,0 +1,58 @@
+@let r = item();
+@let est = compensatedEstimate();
+@let hw = hardware();
+@let fk = fork();
+
+<article class="pwa-card pwa-card--interactive recipe-card">
+  <div class="recipe-card__top">
+    <div class="recipe-card__badges">
+      <pwa-badge variant="info">{{ categoryLabels[r.searchIndex.mealCategory] }}</pwa-badge>
+      @if (r.nutriscoreEst) {
+        <pwa-badge variant="success">Nutri-Score {{ r.nutriscoreEst }}</pwa-badge>
+      }
+      @if (est.isOverridden) {
+        <pwa-badge variant="warning">📌 Fork Personal</pwa-badge>
+      }
+    </div>
+
+    <button
+      type="button"
+      class="fav-btn"
+      [class.fav-btn--active]="fk?.isFavorite"
+      (click)="onFavoriteClick($event)"
+      [attr.aria-label]="fk?.isFavorite ? 'Quitar de favoritos' : 'Añadir a favoritos'"
+    >
+      {{ fk?.isFavorite ? '★' : '☆' }}
+    </button>
+  </div>
+
+  <a [routerLink]="['/recipe', r.slug]" class="recipe-card__link">
+    <h2 class="recipe-card__title">{{ r.title }}</h2>
+
+    <div class="recipe-card__kpis">
+      <div class="kpi-pill kpi-pill--brand">
+        <span>🌡️ Temp. compensada</span>
+        <strong>{{ est.effectiveTempC | temperatureUnit: hw.preferredTempUnit }}</strong>
+      </div>
+      <div class="kpi-pill kpi-pill--brand">
+        <span>⏱️ Cocción Air Fryer</span>
+        <strong>{{ est.effectiveCookMin }} min</strong>
+      </div>
+      <div class="kpi-pill">
+        <span>🍽️ Raciones</span>
+        <strong>{{ r.searchIndex.servings }} ({{ r.kcalPerServing }} kcal)</strong>
+      </div>
+    </div>
+
+    <div class="recipe-card__ingredients">
+      @for (ingId of r.searchIndex.mainIngIds; track ingId) {
+        <span class="ing-tag">{{ canonicalIngredients()[ingId] ?? ingId }}</span>
+      }
+    </div>
+
+    @if (fk?.personalNotes) {
+      <p class="recipe-card__fork-note">📝 "{{ fk?.personalNotes }}"</p>
+    }
+  </a>
+</article>
+
