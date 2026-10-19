@@ -293,3 +293,4 @@ export const CARNES_Y_AVES_RECIPES: readonly Omit<RecipeDetail, 'shardId'>[] = [
     },
   },
 ];
+

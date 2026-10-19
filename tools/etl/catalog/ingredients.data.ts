@@ -51,3 +51,4 @@ export const INGREDIENT_SYNONYMS_MAP: Readonly<Record<string, readonly string[]>
   pollo_muslos: ['muslos de pollo', 'contramuslos'],
   jamon_iberico: ['jamon', 'jamón', 'jamon iberico', 'jamon serrano', 'croquetas'],
 };
+

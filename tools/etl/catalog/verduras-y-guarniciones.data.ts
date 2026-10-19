@@ -282,3 +282,4 @@ export const VERDURAS_Y_GUARNICIONES_RECIPES: readonly Omit<RecipeDetail, 'shard
     },
   },
 ];
+

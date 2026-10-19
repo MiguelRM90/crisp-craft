@@ -173,3 +173,4 @@ export const PESCADOS_Y_MARISCOS_RECIPES: readonly Omit<RecipeDetail, 'shardId'>
     },
   },
 ];
+

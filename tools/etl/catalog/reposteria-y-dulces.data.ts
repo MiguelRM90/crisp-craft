@@ -171,3 +171,4 @@ export const REPOSTERIA_Y_DULCES_RECIPES: readonly Omit<RecipeDetail, 'shardId'>
     },
   },
 ];
+

@@ -179,3 +179,4 @@ export const APERITIVOS_Y_SNACKS_RECIPES: readonly Omit<RecipeDetail, 'shardId'>
     },
   },
 ];
+

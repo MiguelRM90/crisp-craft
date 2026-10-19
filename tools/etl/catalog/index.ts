@@ -15,3 +15,4 @@ export const SEED_RECIPES: readonly Omit<RecipeDetail, 'shardId'>[] = [
   ...APERITIVOS_Y_SNACKS_RECIPES,
   ...REPOSTERIA_Y_DULCES_RECIPES,
 ].sort((a, b) => a.id.localeCompare(b.id));
+
